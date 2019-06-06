@@ -1,4 +1,4 @@
-package progetto.MTGManager.MTGManager;
+package progetto.MTGManager;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
