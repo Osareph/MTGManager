@@ -18,6 +18,7 @@ public class Utente {
 	private String email;
 	private String password;
 	private String role;
+	private String username;
 	
 	
 	public Long getId() {
@@ -56,8 +57,15 @@ public class Utente {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	
-	
-		
+	public Utente() {
+		super();
+	}
 	
 }
