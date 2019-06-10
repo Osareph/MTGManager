@@ -20,7 +20,8 @@ public class UtenteValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwordS", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwords", "required");
 	}
 
 }
