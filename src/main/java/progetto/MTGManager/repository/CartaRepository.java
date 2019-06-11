@@ -3,7 +3,13 @@ package progetto.MTGManager.repository;
 import org.springframework.data.repository.CrudRepository;
 
 import progetto.MTGManager.model.Carta;
+import progetto.MTGManager.model.Set;
 
 public interface CartaRepository extends CrudRepository<Carta, Long> {
+
+	Carta findByNome(String nome);
+
+	Carta findBySet(Set set);
+
 
 }
