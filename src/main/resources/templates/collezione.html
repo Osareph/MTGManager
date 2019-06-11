@@ -1,41 +1,23 @@
 <!DOCTYPE html>
-<html xmls:th="http://www.thymeleaf.org"
-xlms="http://www.w3.org/1999/html" >
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
 <body>
-	<form th:action="@{/registrazione}" method="post" th:object="${utente}"></form>
-		<table>
-			<tr>
-				<td>Nome: </td>
-				<td><input type="text" th:field="*{nome}"/>
-				<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
-			</tr>
-			<tr>
-				<td>Cognome: </td>
-				<td><input type="text" th:field="*{cognome}"/>
-				<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>
-			</tr>
-			<tr>
-				<td>Email: </td>
-				<td><input type="text" th:field="*{email}"/>
-				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
-			</tr>
-			<tr>
-				<td>Username: </td>
-				<td><input type="text" th:field="*{Username}"/>
-				<td th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"></td>
-			</tr>
-			<tr>
-				<td>Password: </td>
-				<td><input type="text" th:field="*{Password}"/>
-				<td th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></td>
-			</tr>
-			<tr>
-				<td><button type="submit">Invio</button>
-			</tr>
-		</table>
+	<div>
+		<h4>Collezione</h4>
+		<ul>
+			<!-- Finch� trovi una carta, stampa una lista puntata -->
+			<li th:each="carta : ${carte}"> 
+				<!-- Viene stampato un link -->
+				<!-- Il link lo costruiamo noi, con il nome della carta, 
+					abbiamo indicato che sia il controller a gestire la richiesta,
+					con una get-->
+				<!-- Al posto di paolo (valore fittizio), 
+					compare ci� che ho specificato in th:text -->
+				<a
+				th:href="@{'/carta' + '/' + ${carta.id}}"
+				th:text="${carta.nome}"> paolo</a>
+			</li>
+		</ul>
+	</div>
 </body>
 </html>

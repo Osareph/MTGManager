@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+		<h4>Carta</h4>
+		<div>
+		Nome: <span th:text="${carta.nome}">Gigi</span>
+		</div>
+		<div>
+		Set: <span th:text="${carta.set.getNome()}">D'Alessio</span>
+		</div>
+		<div>
+		Quantità disponibile: <span th:text="${carta.quantitaMax-carta.getUtenti().size()}">Pezzali</span>
+		</div>
+	</div>
+</body>
+</html>
