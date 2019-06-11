@@ -2,6 +2,7 @@ package progetto.MTGManager.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,7 @@ public class Carta {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable= false)
 	private Long id;
 	private String nome;
 	@ManyToOne
