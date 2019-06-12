@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 import javax.persistence.ManyToOne;
 
 
@@ -23,6 +22,8 @@ public class Carta {
 	private Set set;
 	@ManyToOne
 	private Utente utenti;
+	@ManyToOne
+	private Collezione collezione;
 	
 	public Long getId() {
 		return id;
@@ -47,6 +48,12 @@ public class Carta {
 	}
 	public void setUtenti(Utente utenti) {
 		this.utenti = utenti;
+	}
+	public Collezione getCollezione() {
+		return collezione;
+	}
+	public void setCollezione(Collezione collezione) {
+		this.collezione = collezione;
 	}
 
 	
