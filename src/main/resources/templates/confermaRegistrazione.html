@@ -23,7 +23,7 @@ xlms="http://www.w3.org/1999/html" >
 		<h4 th:text="${utente.username}"></h4>
 	</div>
 	<div>
-		<button value="submit" th:href="@{'/logIn'}">Invio</button>
+		<a th:href="@{'/logIn'}"><input type="button" value="Invio"/></a>
 	</div>
 </body>
 </html>
