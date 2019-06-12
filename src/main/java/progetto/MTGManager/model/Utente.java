@@ -21,7 +21,7 @@ public class Utente {
 	private String nome;
 	private String cognome;
 	private String email;
-	private String password;
+	private String passwords;
 	private String role;
 	private String username;
 	@OneToMany
@@ -52,11 +52,11 @@ public class Utente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
+	public String getPasswords() {
+		return passwords;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswords(String password) {
+		this.passwords = password;
 	}
 	public String getRole() {
 		return role;

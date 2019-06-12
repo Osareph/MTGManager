@@ -30,8 +30,8 @@ xlms="http://www.w3.org/1999/html" >
 			</tr>
 			<tr>
 				<td>Password: </td>
-				<td><input type="password" th:field="*{Password}"/>
-				<td th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></td>
+				<td><input type="passwords" th:field="*{Passwords}"/>
+				<td th:if="${#fields.hasErrors('Passwords')}" th:errors="*{Passwords}"></td>
 			</tr>
 			<tr>
 				<td><button type="submit">Invio</button>
