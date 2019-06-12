@@ -28,4 +28,5 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 				
 			.and().logout().logoutUrl("/logOut").logoutSuccessUrl("/index");
 	}
+	
 }
