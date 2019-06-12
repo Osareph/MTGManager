@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Utente {
@@ -21,7 +23,7 @@ public class Utente {
 	private String password;
 	private String role;
 	private String username;
-	@ManyToMany(mappedBy = "utenti")
+	@OneToMany
 	private List<Carta> carte;
 	
 	
