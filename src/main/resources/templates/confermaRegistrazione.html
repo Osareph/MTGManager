@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org"
+xlms="http://www.w3.org/1999/html" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<h4>Nome:</h4>
+		<h4 th:text="${utente.nome}"></h4>
+	</div>
+	<div>
+		<h4>congome:</h4>
+		<h4 th:text="${utente.cognome}"></h4>
+	</div>
+	<div>
+		<h4>email:</h4>
+		<h4 th:text="${utente.email}"></h4>
+	</div>
+	<div>
+		<h4>username:</h4>
+		<h4 th:text="${utente.username}"></h4>
+	</div>
+	<div>
+		<button value="submit" th:href="@{'/logIn'}">Invio</button>
+	</div>
+</body>
+</html>
