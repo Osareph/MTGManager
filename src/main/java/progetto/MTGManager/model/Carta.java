@@ -7,9 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+
 
 @Entity
 public class Carta {
@@ -21,8 +21,8 @@ public class Carta {
 	private String nome;
 	@ManyToOne
 	private Set set;
-	@ManyToMany
-	private List<Utente> utenti;
+	@ManyToOne
+	private Utente utenti;
 	
 	public Long getId() {
 		return id;
@@ -42,12 +42,13 @@ public class Carta {
 	public void setSet(Set set) {
 		this.set = set;
 	}
-	public List<Utente> getUtenti() {
+	public Utente getUtenti() {
 		return utenti;
 	}
-	public void setUtenti(List<Utente> utenti) {
+	public void setUtenti(Utente utenti) {
 		this.utenti = utenti;
 	}
+
 	
 	
 	
