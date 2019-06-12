@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 
 import progetto.MTGManager.model.Carta;
 import progetto.MTGManager.repository.CartaRepository;
 
+@Component
 public class CartaService {
 	
 

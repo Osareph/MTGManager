@@ -1,11 +1,13 @@
 package progetto.MTGManager.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.repository.UtenteRepository;
 
+@Component
 public class UtenteService {
 	
 	@Autowired

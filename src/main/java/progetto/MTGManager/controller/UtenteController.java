@@ -51,4 +51,9 @@ public class UtenteController {
 			return "collezione.html";
 		}
 	}
+	
+	@RequestMapping(value = "/index")
+	public String singUp() {
+		return "index";
+	}
 }

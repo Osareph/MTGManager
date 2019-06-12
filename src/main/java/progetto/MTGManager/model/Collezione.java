@@ -15,8 +15,4 @@ public class Collezione {
 	private Long id;
 	
 	private String nome;
-	
-	private Utente utente;
-	
-	private List<Carta> cartePossedute;
 }
