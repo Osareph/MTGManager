@@ -54,5 +54,9 @@ public class UtenteController {
 		return "logIn";
 	}
 	
+	@RequestMapping(value = "/logOut")
+	public String logOut() {
+		return "logOut";
+	}
 
 }
