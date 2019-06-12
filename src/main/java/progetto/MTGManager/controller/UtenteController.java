@@ -35,9 +35,9 @@ public class UtenteController {
 		if(!bindingResult.hasErrors()) {
 			utenteService.aggiungiUtente(utente);
 			model.addAttribute("utente",this.utenteService.utentePerUsername(utente));
-			return "confermaRegistrazione.html";
+			return "confermaRegistrazione";
 		} else {
-			return "singUp.html";
+			return "singUp";
 		}
 	}
 	
@@ -45,15 +45,21 @@ public class UtenteController {
 	public String getCarta(@PathVariable ("id") Long id, Model model) {
 		if(id!=null) {
 			model.addAttribute("carta", this.cartaService.cartaPerId(id));
-			return "carta.html";
+			return "carta";
 		}else {
 			model.addAttribute("carte", this.cartaService.tutti());
-			return "collezione.html";
+			return "collezione";
 		}
 	}
 	
+	@RequestMapping(value = "/singUp")
+	public String singUp(Model model) {
+		model.addAttribute("utente", new Utente());
+		return "singUp";
+	}
+	
 	@RequestMapping(value = "/index")
-	public String singUp() {
+	public String index() {
 		return "index";
 	}
 }
