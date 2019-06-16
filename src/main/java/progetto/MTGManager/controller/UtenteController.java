@@ -3,6 +3,7 @@ package progetto.MTGManager.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,6 +33,8 @@ public class UtenteController {
 		String nextPage;
 		utenteValidator.validate(utente, bindingResult);
 		if(!bindingResult.hasErrors()) {
+			utente.setParolaSegreta(new BCryptPasswordEncoder().encode(utente.getParolaSegreta()));
+			utente.setRole("GUEST");
 			utenteService.aggiungiUtente(utente);
 			model.addAttribute("utente", utente);
 			nextPage="confermaRegistrazione";
