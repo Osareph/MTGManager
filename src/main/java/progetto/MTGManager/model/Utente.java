@@ -28,11 +28,11 @@ public class Utente {
 	private String cognome;
 	@Column
 	private String email;
-	@Column
+	@Column(name = "password")
 	private String parolaSegreta;
 	@Column
 	private String role;
-	@Column
+	@Column(name = "username")
 	private String username;
 	@OneToMany
 	private List<Carta> carte;
