@@ -2,19 +2,23 @@
 <html xmls:th="http://www.thymeleaf.org"
 xlms="http://www.w3.org/1999/html" >
 <head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
 <meta charset="ISO-8859-1">
 <title>Pagina Iniziale</title>
 </head>
 <body>
-	<div>
-		<h4>
-			<a th:href="@{'/logIn'}"><input type="button" value="LogIn"/></a>
-		</h4>
-	</div>
-	<div>
-		<h4>
-			<a th:href="@{'/singUp'}"><input type="button" value="SingUp"/></a>
-		</h4>
+	<div class="top-box">
+		<div class="logo-box">
+			<img th:src="@{'/assets/logo.png'}" class="logo"/></div>
+		
+				<a th:href="@{'/logIn'}"><input class="button" type="button"
+					value="LOG IN" /></a>
+
+				<a th:href="@{'/singUp'}"><input class="button" type="button"
+					value="SING UP" /></a>
+			</div>
+			<div class="background-box">
+	<img th:src="@{'/assets/background.jpg'}" class="logo" />
 	</div>
 </body>
 </html>

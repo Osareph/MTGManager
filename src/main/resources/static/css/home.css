@@ -21,7 +21,7 @@ a.link:hover {
 }
 
 input:focus {
-	background: red
+	background: #fe3c00
 }
 
 .box {
