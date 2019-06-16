@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html xmls:th="http://www.thymeleaf.org"
-xlms="http://www.w3.org/1999/html" >
+	xlms="http://www.w3.org/1999/html">
 <head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
 <meta charset="ISO-8859-1">
 <title>Home</title>
 </head>
 <body>
-	<div>
-		<h4>
-			<a th:href="@{'/collezione'}"><input type="button" value="collezione"/></a>
-		</h4>
+	<div class="top-box">
+		<div class="logo-box">
+			<img th:src="@{'/assets/logo.png'}" class="logo"/></div>
+		
+				<a th:href="@{'/collezione'}"><input class="button" type="button"
+					value="COLLEZIONE" /></a>
+
+				<a th:href="@{'/collezionePersonale'}"><input class="button" type="button"
+					value="LA MIA COLLEZIONE" /></a>
+				<!-- <span th:if="${utente.role}=='admin'"> -->
+				<a th:href="@{/aggiungiCarta}"><input class="button" type="button"
+					value="AGGIUNGI UNA CARTA" /> <!-- </span> --> </a>
+					
+				<a th:href="@{'/logOut'}"><input class="button" type="button"
+					value="LOG OUT"/></a>
 	</div>
-	<div>
-		<h4>
-			<a th:href="@{'/collezionePersonale'}"><input type="button" value="La mia collezione"/></a>
-		</h4>
-	</div>
-	<div>
-		<h4>
-			<a th:href="@{/aggiungiCarta}"><input tyoe="button" value="Aggiungi una carta"/></a>
-		</h4>
+	<div class="background-box">
+	<img th:src="@{'/assets/background.jpg'}" class="logo" />
 	</div>
 </body>
 </html>

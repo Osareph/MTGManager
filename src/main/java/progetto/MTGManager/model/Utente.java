@@ -34,7 +34,7 @@ public class Utente {
 	private String role;
 	@Column(name = "username")
 	private String username;
-	@OneToMany
+	@OneToMany(mappedBy= "utente")
 	private List<Carta> carte;
 	
 	

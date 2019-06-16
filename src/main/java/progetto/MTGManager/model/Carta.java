@@ -21,7 +21,7 @@ public class Carta {
 	@ManyToOne
 	private Set set;
 	@ManyToOne
-	private Utente utenti;
+	private Utente utente;
 	@ManyToOne
 	private Collezione collezione;
 	
@@ -44,10 +44,10 @@ public class Carta {
 		this.set = set;
 	}
 	public Utente getUtenti() {
-		return utenti;
+		return utente;
 	}
 	public void setUtenti(Utente utenti) {
-		this.utenti = utenti;
+		this.utente = utenti;
 	}
 	public Collezione getCollezione() {
 		return collezione;
