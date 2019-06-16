@@ -21,7 +21,7 @@ public class UtenteValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "cognome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwords", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "parolaSegreta", "required");
 	}
 
 }

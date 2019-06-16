@@ -25,13 +25,13 @@ xlms="http://www.w3.org/1999/html" >
 			</tr>
 			<tr>
 				<td>Username: </td>
-				<td><input type="text" th:field="*{Username}"/>
-				<td th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"></td>
+				<td><input type="text" th:field="*{username}"/>
+				<td th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></td>
 			</tr>
 			<tr>
 				<td>Password: </td>
-				<td><input type="text" th:field="*{Password}"/>
-				<td th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></td>
+				<td><input type="password" th:field="*{parolaSegreta}"/>
+				<td th:if="${#fields.hasErrors('parolaSegreta')}" th:errors="*{parolaSegreta}"></td>
 			</tr>
 			<tr>
 				<td><button type="submit">Invio</button>
