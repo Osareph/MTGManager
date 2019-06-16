@@ -2,27 +2,42 @@ package progetto.MTGManager.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.springframework.web.bind.annotation.CookieValue;
 
 
 @Entity
+@Table(name = "utente")
 public class Utente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column
 	private String nome;
+	
+	@Column
 	private String cognome;
+	@Column
 	private String email;
-	private String password;
+	@Column
+	private String parolaSegreta;
+	@Column
 	private String role;
+	@Column
 	private String username;
 	@OneToMany
 	private List<Carta> carte;
+	
+	
 	
 	
 	public Long getId() {
@@ -49,11 +64,18 @@ public class Utente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
+	
+	public String getParolaSegreta() {
+		return parolaSegreta;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setParolaSegreta(String parolaSegreta) {
+		this.parolaSegreta = parolaSegreta;
+	}
+	public List<Carta> getCarte() {
+		return carte;
+	}
+	public void setCarte(List<Carta> carte) {
+		this.carte = carte;
 	}
 	public String getRole() {
 		return role;
@@ -68,8 +90,6 @@ public class Utente {
 		this.username = username;
 	}
 	
-	public Utente() {
-		super();
-	}
+	public Utente() {}
 	
 }
