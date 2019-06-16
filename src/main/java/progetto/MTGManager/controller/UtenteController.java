@@ -8,14 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 import progetto.MTGManager.model.Utente;
-import progetto.MTGManager.services.CartaService;
 import progetto.MTGManager.services.UtenteService;
 import progetto.MTGManager.services.UtenteValidator;
 
@@ -33,15 +30,14 @@ public class UtenteController {
 		String nextPage;
 		utenteValidator.validate(utente, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			utente.setParolaSegreta(new BCryptPasswordEncoder().encode(utente.getParolaSegreta()));
 			utente.setRole("GUEST");
+			utente.setParolaSegreta(new BCryptPasswordEncoder().encode(utente.getParolaSegreta()));
 			utenteService.aggiungiUtente(utente);
 			model.addAttribute("utente", utente);
 			nextPage="confermaRegistrazione";
 		} else {
 			nextPage="singUp";
 		}
-		
 		return nextPage;
 	}
 	
@@ -59,12 +55,11 @@ public class UtenteController {
 	@RequestMapping(value = "/logIn")
 	public String logIn(Model model) {
 		model.addAttribute("utente", new Utente());
-		return "logIn";
+		return "home";
 	}
 	
 	@RequestMapping(value = "/logOut")
 	public String logOut() {
 		return "logOut";
 	}
-
 }

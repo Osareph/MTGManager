@@ -7,15 +7,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -25,17 +22,25 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private Environment environment;
 	
-	private DataSource dataSource;
-	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		
 		httpSecurity
-		
+			.authorizeRequests()
+				.antMatchers("/index","/","/singUp","/confermaRegistrazione","/registrazione").permitAll()
+			.antMatchers("/admin").hasAnyRole("ADMIN")
+			.anyRequest().authenticated()
+			
+			.and()
+			
 			.formLogin()
-				.defaultSuccessUrl("/index").loginPage("/logIn")
+				.defaultSuccessUrl("/home")
 				
-			.and().logout().logoutUrl("/logOut").logoutSuccessUrl("/index");
+			.and()
+			
+			.logout()
+				.logoutUrl("/logOut")
+				.logoutSuccessUrl("/");
 	}
 	
     @Bean

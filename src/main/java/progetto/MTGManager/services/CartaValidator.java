@@ -6,7 +6,6 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import progetto.MTGManager.model.Carta;
-import progetto.MTGManager.model.Utente;
 
 @Component
 public class CartaValidator implements Validator{
