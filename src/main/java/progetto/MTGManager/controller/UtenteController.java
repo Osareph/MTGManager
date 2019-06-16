@@ -36,7 +36,6 @@ public class UtenteController {
 			model.addAttribute("utente", utente);
 			nextPage="confermaRegistrazione";
 		} else {
-			model.addAttribute("utente", new Utente());
 			nextPage="singUp";
 		}
 		
