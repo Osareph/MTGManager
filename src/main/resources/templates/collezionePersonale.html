@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li th:each="carta: ${carte}">
+			<a th:href="@{'/carta' + '/' + '${carta.id}'"
+			   th:text="${carta.nome}">gigi</a>
+		</li>
+	</ul>
+</body>
+</html>

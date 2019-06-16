@@ -5,13 +5,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 import progetto.MTGManager.model.Carta;
 import progetto.MTGManager.repository.CartaRepository;
 
-@Component
+@Service
 public class CartaService {
 	
 
@@ -33,7 +34,7 @@ public class CartaService {
 		return this.cartaRepository.findBySet(carta.getSet());
 	}
 	
-
+	@Transactional
 	public Carta cartaPerId(Long id) {
 		return (Carta)this.cartaRepository.findById(id).get();
 	}
