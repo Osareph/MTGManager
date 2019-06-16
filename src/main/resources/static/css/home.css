@@ -11,23 +11,17 @@ h1 {
 	font: 36px Helvetica, Arial, sans-serif;
 }
 
-/* Colore del testo delle liste */
-li {
-	color: green;
+
 }
 /* Colore dei titoli h1 per la stampa */
-a.title {	
-	position:relative;
-	color: pink;
-	text-align: center;
-}
+
 
 a.link:hover {
 	text-decoration: underline
 }
 
 input:focus {
-	background: yellow
+	background: red
 }
 
 .box {
@@ -61,7 +55,7 @@ input:focus {
 
 .button:hover{
 	text-decoration:underline;
-	background: red;
+	background: #fe3c00;
 	color: white;
 }
 
