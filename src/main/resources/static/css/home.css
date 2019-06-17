@@ -2,13 +2,12 @@
 
 body {
 	background: black;
-	color: black;
+	color: white;
 }
 
 /* Stili per i titoli h1 */
-h1 {
-	color: red;
-	font: 36px Helvetica, Arial, sans-serif;
+h4 {
+	color: white;
 }
 
 
@@ -21,7 +20,7 @@ a.link:hover {
 }
 
 input:focus {
-	background: #fe3c00
+	background: #fe3c00;
 }
 
 .box {
@@ -53,11 +52,29 @@ input:focus {
 	padding-top: 16px;
 }
 
+.button2 {
+	position:relative;
+	width:29%;
+	height:20%;
+	left:16%;
+	background:none;
+	color:white;
+	cursor:pointer;
+	border:none;
+}
+
 .button:hover{
 	text-decoration:underline;
 	background: #fe3c00;
 	color: white;
 }
+
+.button2:hover{
+	text-decoration:underline;
+	background: #fe3c00;
+	color: white;
+}
+
 
 .top-box {
 	position: fixed;
@@ -86,14 +103,38 @@ input:focus {
 	padding-bottom: 0px;
 	padding-top: 0px;
 }
+.logo-box2{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	left: 40%;
+	position: fixed;
+	background: none;
+	border:none; 
+	width: 20%;
+	height:8%;
+	color: white;
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
 .logo{
 	position: relative;
 	max-width: 100%;
 	max-height: 100%;
 }
 .background-box{
-	position:absolute;
+	position:fixed;
 	top:9%;
 	left:0%;
 	width:100%;
+}
+.form-box{
+	position:relative;
+	top:5%;
+	width:40%;
+	left:38%;
+	height:auto;
+	background:none;
+	
 }

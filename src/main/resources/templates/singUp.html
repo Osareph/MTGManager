@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html xmls:th="http://www.thymeleaf.org"
-xlms="http://www.w3.org/1999/html" >
+	xlms="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" th:href="@{/css/home.css}" />
 <title>Insert title here</title>
 </head>
 <body>
-	<form th:action="@{/registrazione}" method="post" th:object="${utente}">
-		<table>
-			<tr>
-				<td>Nome: </td>
-				<td><input type="text" th:field="*{nome}"/>
-				<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
-			</tr>
-			<tr>
-				<td>Cognome: </td>
-				<td><input type="text" th:field="*{cognome}"/>
-				<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>
-			</tr>
-			<tr>
-				<td>Email: </td>
-				<td><input type="text" th:field="*{email}"/>
-				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
-			</tr>
-			<tr>
-				<td>Username: </td>
-				<td><input type="text" th:field="*{username}"/>
-				<td th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></td>
-			</tr>
-			<tr>
-				<td>Password: </td>
-				<td><input type="password" th:field="*{parolaSegreta}"/>
-				<td th:if="${#fields.hasErrors('parolaSegreta')}" th:errors="*{parolaSegreta}"></td>
-			</tr>
-			<tr>
-				<td><button type="submit">Invio</button>
-			</tr>
-		</table>
-	</form>
+	<div class="top-box">
+		<div class="logo-box2">
+			<img th:src="@{'/assets/logo.png'}" class="logo" />
+		</div>
+	</div>
+	<div class="background-box">
+		<div class="form-box">
+			<form th:action="@{/registrazione}" method="post"
+				th:object="${utente}">
+				<table>
+					<tr>
+						<td><h4>Nome:</h4></td>
+						<td><input type="text" th:field="*{nome}" />
+						<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
+					</tr>
+					<tr>
+						<td><h4>Cognome:</h4></td>
+						<td><input type="text" th:field="*{cognome}" />
+						<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>
+					</tr>
+					<tr>
+						<td><h4>Email:</h4></td>
+						<td><input type="text" th:field="*{email}" />
+						<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+					</tr>
+					<tr>
+						<td><h4>Username:</h4></td>
+						<td><input type="text" th:field="*{username}" />
+						<td th:if="${#fields.hasErrors('username')}"
+							th:errors="*{username}"></td>
+					</tr>
+					<tr>
+						<td><h4>Password:</h4></td>
+						<td><input type="password" th:field="*{parolaSegreta}" />
+						<td th:if="${#fields.hasErrors('parolaSegreta')}"
+							th:errors="*{parolaSegreta}"></td>
+					</tr>
+				</table>
+				<button type="submit" class="button2"><h4>INVIO</h4></button>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
