@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html xmls:th="http://www.thymeleaf.org"
-xlms="http://www.w3.org/1999/html" >
+	xlms="http://www.w3.org/1999/html">
 <head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<h4>Nome:</h4>
-		<h4 th:text="${utente.nome}"></h4>
+	<div class="top-box">
+		<div class="logo-box">
+			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}" class="logo" /></a>
+		</div>
 	</div>
-	<div>
-		<h4>congome:</h4>
-		<h4 th:text="${utente.cognome}"></h4>
-	</div>
-	<div>
-		<h4>email:</h4>
-		<h4 th:text="${utente.email}"></h4>
-	</div>
-	<div>
-		<h4>username:</h4>
-		<h4 th:text="${utente.username}"></h4>
-	</div>
-	<div>
-		<a th:href="@{'/logIn'}"><input type="button" value="Invio"/></a>
-	</div>
+	<div class="background-box2">
+	<div class="form-box">
+	<h1>CONFERMA REGISTRAZIONE</h1>
+	Nome:
+	<p th:text="${utente.nome}"></p>
+
+	Congome:
+	<p th:text="${utente.cognome}"></p>
+
+	Email:
+	<p th:text="${utente.email}"></p>
+
+	Username:
+	<p th:text="${utente.username}"></p>
+
+	<a th:href="@{'/logIn'}"><input type="button" class="button3" value="Invio" /></a>
+	</div></div>
+	
 </body>
 </html>

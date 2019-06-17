@@ -9,43 +9,41 @@
 <body>
 	<div class="top-box">
 		<div class="logo-box2">
-			<img th:src="@{'/assets/logo.png'}" class="logo" />
+			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}" class="logo" /></a>
 		</div>
 	</div>
-	<div class="background-box">
+	<div class="background-box2">
 		<div class="form-box">
+			<h1>REGISTRATI</h1>
 			<form th:action="@{/registrazione}" method="post"
 				th:object="${utente}">
-				<table>
-					<tr>
-						<td><h4>Nome:</h4></td>
-						<td><input type="text" th:field="*{nome}" />
-						<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
-					</tr>
-					<tr>
-						<td><h4>Cognome:</h4></td>
-						<td><input type="text" th:field="*{cognome}" />
-						<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>
-					</tr>
-					<tr>
-						<td><h4>Email:</h4></td>
-						<td><input type="text" th:field="*{email}" />
-						<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
-					</tr>
-					<tr>
-						<td><h4>Username:</h4></td>
-						<td><input type="text" th:field="*{username}" />
-						<td th:if="${#fields.hasErrors('username')}"
-							th:errors="*{username}"></td>
-					</tr>
-					<tr>
-						<td><h4>Password:</h4></td>
-						<td><input type="password" th:field="*{parolaSegreta}" />
-						<td th:if="${#fields.hasErrors('parolaSegreta')}"
-							th:errors="*{parolaSegreta}"></td>
-					</tr>
-				</table>
-				<button type="submit" class="button2"><h4>INVIO</h4></button>
+
+				Nome<br>
+				<input class="error" th:if="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="CAMPO OBBLIGATORIO!"/>
+				<input th:unless="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="Nome"/>
+				
+				<br> 
+				Cognome<br>
+				<input class="error" th:if="${#fields.hasErrors('cognome')}" type="text" th:field="*{cognome}"  placeholder="CAMPO OBBLIGATORIO!"/>
+				<input th:unless="${#fields.hasErrors('cognome')}" type="text" th:field="*{cognome}"  placeholder="Cognome"/>
+				<br>
+				Email<br>
+				<input class="error" th:if="${#fields.hasErrors('email')}" type="text" th:field="*{email}"  placeholder="CAMPO OBBLIGATORIO!"/>
+				<input type="text" th:unless="${#fields.hasErrors('email')}" th:field="*{email}"  placeholder="Email"/>
+				<br>
+				Username<br>
+				<input class="error" th:if="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="CAMPO OBBLIGATORIO!"/>
+				<input th:unless="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="Username"/>
+				<br>
+				Password<br>
+				<input class="error" type="password" th:if="${#fields.hasErrors('parolaSegreta')}" th:field="*{parolaSegreta}" placeholder="CAMPO OBBLIGATORIO!"/>
+				<input type="password" th:unless="${#fields.hasErrors('parolaSegreta')}" th:field="*{parolaSegreta}" placeholder="Password"/>
+				
+				<br>
+
+				<button type="submit" class="button3">
+					<h4>INVIO</h4>
+				</button>
 			</form>
 		</div>
 	</div>

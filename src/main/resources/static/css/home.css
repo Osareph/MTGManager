@@ -19,10 +19,6 @@ a.link:hover {
 	text-decoration: underline
 }
 
-input:focus {
-	background: #fe3c00;
-}
-
 .box {
 	position: absolute;
 	top: 0px;
@@ -54,13 +50,33 @@ input:focus {
 
 .button2 {
 	position:relative;
-	width:29%;
+	width:88%;
+	border-top:10%;
+	border-bottom:10%;
 	height:20%;
-	left:16%;
+	left:-3%;
 	background:none;
 	color:white;
 	cursor:pointer;
 	border:none;
+}
+
+.button3 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	left: 5%;
+	position: relative;
+	background: none;
+	border:none; 
+	width: 20%;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-radius: 4px;
+	background: #fe3c00;
+	opacity: 0.9;
 }
 
 .button:hover{
@@ -72,6 +88,12 @@ input:focus {
 .button2:hover{
 	text-decoration:underline;
 	background: #fe3c00;
+	color: white;
+}
+
+.button3:hover{
+	text-decoration:underline;
+	background: #e53600;
 	color: white;
 }
 
@@ -129,12 +151,62 @@ input:focus {
 	left:0%;
 	width:100%;
 }
+
+.background-box2{
+	position:fixed;
+	top:9%;
+	height:91%;
+	left:0%;
+	width:100%;
+	background-image: url(/assets/back5.jpg);
+	opacity: 0.8;
+}
+
 .form-box{
+	padding-left:13%;
+	padding-right:13%;
+	padding-bottom:2%;
 	position:relative;
 	top:5%;
-	width:40%;
-	left:38%;
+	width:73%;
+	left:0%;
 	height:auto;
 	background:none;
 	
+}
+.confirm-box{
+	padding-left:13%;
+	padding-right:13%;
+	padding-bottom:2%;
+	position:relative;
+	top:5%;
+	width:13%;
+	left:30%;
+	height:auto;
+	background:none;
+	text-align:center;
+	border: 20px black;
+}
+
+input {
+  border: 2px solid grey;
+  border-radius: 4px;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  
+}
+input:focus {
+	background: #fe3c00;
+}
+.error{
+	background:#fe3c00;
+}
+
+.error:active{
+	background: white;
+}
+.error:visited{
+	background: white;
 }
