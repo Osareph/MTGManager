@@ -5,7 +5,7 @@ body {
 	color: white;
 }
 
-/* Stili per i titoli h1 */
+
 h4 {
 	color: white;
 }
@@ -196,17 +196,18 @@ input {
   margin: 8px 0;
   box-sizing: border-box;
   
-}
-input:focus {
-	background: #fe3c00;
-}
-.error{
-	background:#fe3c00;
+  
 }
 
-.error:active{
+.error{
+	background:#fe3c00;
+	transition: background-color 0.6s;
+
+}
+
+.error:hover{
 	background: white;
 }
-.error:visited{
-	background: white;
+.normal{
+	background:white;
 }

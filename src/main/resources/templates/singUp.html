@@ -4,7 +4,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" th:href="@{/css/home.css}" />
-<title>Insert title here</title>
+<title>Sing Up</title>
 </head>
 <body>
 	<div class="top-box">
@@ -19,24 +19,23 @@
 				th:object="${utente}">
 
 				Nome<br>
-				<input class="error" th:if="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="CAMPO OBBLIGATORIO!"/>
+				<input class="error" th:if="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
 				<input th:unless="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="Nome"/>
-				
 				<br> 
 				Cognome<br>
-				<input class="error" th:if="${#fields.hasErrors('cognome')}" type="text" th:field="*{cognome}"  placeholder="CAMPO OBBLIGATORIO!"/>
+				<input class="error" th:if="${#fields.hasErrors('cognome')}" type="text" th:field="*{cognome}"  placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
 				<input th:unless="${#fields.hasErrors('cognome')}" type="text" th:field="*{cognome}"  placeholder="Cognome"/>
 				<br>
 				Email<br>
-				<input class="error" th:if="${#fields.hasErrors('email')}" type="text" th:field="*{email}"  placeholder="CAMPO OBBLIGATORIO!"/>
+				<input class="error" th:if="${#fields.hasErrors('email')}" type="text" th:field="*{email}"  placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
 				<input type="text" th:unless="${#fields.hasErrors('email')}" th:field="*{email}"  placeholder="Email"/>
 				<br>
 				Username<br>
-				<input class="error" th:if="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="CAMPO OBBLIGATORIO!"/>
+				<input class="error" th:if="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
 				<input th:unless="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="Username"/>
 				<br>
 				Password<br>
-				<input class="error" type="password" th:if="${#fields.hasErrors('parolaSegreta')}" th:field="*{parolaSegreta}" placeholder="CAMPO OBBLIGATORIO!"/>
+				<input class="error" type="password" th:if="${#fields.hasErrors('parolaSegreta')}" th:field="*{parolaSegreta}" placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
 				<input type="password" th:unless="${#fields.hasErrors('parolaSegreta')}" th:field="*{parolaSegreta}" placeholder="Password"/>
 				
 				<br>
