@@ -69,7 +69,7 @@ public class CartaController {
 		}
 		
 	}
-	@RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/carta/{id}", method = RequestMethod.GET)
 	public String getCarta(@PathVariable ("id") Long id, Model model) {
 		if(id!=null) {
 			model.addAttribute("carta", this.cartaService.cartaPerId(id));

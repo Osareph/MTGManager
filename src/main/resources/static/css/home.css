@@ -11,14 +11,22 @@ h4 {
 }
 
 
-}
-/* Colore dei titoli h1 per la stampa */
-
-
-a.link:hover {
-	text-decoration: underline
+h1{ 
+	color:white;
+	padding-left: 5%;
 }
 
+
+.carta-link:hover {
+	text-decoration: underline;
+	color: green;
+}
+.carta-link:visited{
+	color:none;
+}
+.carta-link {
+	color: white;
+}
 .box {
 	position: absolute;
 	top: 0px;
@@ -111,6 +119,34 @@ a.link:hover {
 	padding-top: 5px;
 	border:none;	
 }
+.top-box2 {
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	top: 0px;
+	left: 0px;
+	margin: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	border:none;
+	background-image: url(/assets/topbanner.png);
+	z-index:3;
+}
+.top-banner{
+	position: fixed;
+	width: 100%;
+	height: 9%;
+	top: 0px;
+	left: 0px;
+	margin: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	border:none;
+	background: black;
+	z-index:2;
+}
 .logo-box{
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -128,12 +164,12 @@ a.link:hover {
 .logo-box2{
 	margin-top: 0px;
 	margin-bottom: 0px;
-	left: 40%;
-	position: fixed;
+	left: 22%;
+	position: absolute;
 	background: none;
 	border:none; 
 	width: 20%;
-	height:8%;
+	height:50%;
 	color: white;
 	text-align: center;
 	padding-bottom: 0px;
@@ -160,6 +196,18 @@ a.link:hover {
 	width:100%;
 	background-image: url(/assets/back5.jpg);
 	opacity: 0.8;
+	z-index:1;
+}
+.background-box3{
+	padding-top:5%;
+	position:absolute;
+	top:16%;
+	height:91%;
+	left:0%;
+	width:100%;
+	background-image: url(/assets/background-grey.jpg);
+	opacity: 0.8;
+	z-index:1;
 }
 
 .form-box{
@@ -210,4 +258,128 @@ input {
 }
 .normal{
 	background:white;
+}
+.carta-box {
+	position:relative;
+	border: none;
+	width: 80%;
+	left:10%;
+	height:auto;
+	
+	background: none;
+}
+
+.cartaimg-box {
+	padding:0.2%;
+	position:relative;
+	width:10%;
+	left:0%;
+	height:80%;
+	heigth:auto;
+	display: inline-block;
+	
+}
+.info-boxV{
+	position:absolute;
+	width:78%;
+	top:0;
+	left:11.2%;
+	height:91.5%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/back4.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 2%;
+}
+.info-boxN{
+	position:absolute;
+	width:78%;
+	top:0;
+	left:11.2%;
+	height:91.5%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/swamp-wrapper.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 2%;
+}
+.info-boxB{
+	position:absolute;
+	width:78%;
+	top:0;
+	left:11.2%;
+	height:91.5%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/island-wrapper.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 2%;
+}
+.info-boxR{
+	position:absolute;
+	width:78%;
+	top:0;
+	left:11.2%;
+	height:91.5%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/mountain-wrapper.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 2%;
+}
+.info-boxW{
+	position:absolute;
+	width:78%;
+	top:0;
+	left:11.2%;
+	height:91.5%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/plains-wrapper.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 2%;
+}
+.info-boxV:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 79%;
+	height:102%;
+	z-index:3;
+}
+.info-boxN:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 79%;
+	height:102%;
+	z-index:3;
+}
+.info-boxB:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 79%;
+	height:102%;
+	z-index:3;
+}
+.info-boxR:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 79%;
+	height:102%;
+	z-index:3;
+}
+.info-boxW:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 79%;
+	height:102%;
+	z-index:3;
+}
+.cartaimg-box img{
+	vertical-align: middle;
+	horizontal-align: middle;
 }

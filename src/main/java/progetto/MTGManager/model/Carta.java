@@ -23,7 +23,15 @@ public class Carta {
 	private Utente utente;
 	@ManyToOne
 	private Collezione collezione;
+	private String colore;
 	
+	public Carta(String nome, String colore) {
+		this.nome=nome;
+		this.colore=colore;
+	}
+	public Carta() {
+		
+	}
 	public Long getId() {
 		return id;
 	}
@@ -53,6 +61,18 @@ public class Carta {
 	}
 	public void setCollezione(Collezione collezione) {
 		this.collezione = collezione;
+	}
+	public Utente getUtente() {
+		return utente;
+	}
+	public void setUtente(Utente utente) {
+		this.utente = utente;
+	}
+	public String getColore() {
+		return colore;
+	}
+	public void setColore(String colore) {
+		this.colore = colore;
 	}
 
 	
