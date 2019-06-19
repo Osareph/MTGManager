@@ -65,19 +65,5 @@ public class UtenteController {
 		}
 		return nextPage;
 	}
-	@RequestMapping(value = "/index")
-	public String index() {
-		return "index";
-	}
-	
-	@RequestMapping(value = "/logIn")
-	public String logIn(Model model) {
-		model.addAttribute("utente", new Utente());
-		return "home";
-	}
-	
-	@RequestMapping(value = "/logOut")
-	public String logOut() {
-		return "logOut";
-	}
+
 }
