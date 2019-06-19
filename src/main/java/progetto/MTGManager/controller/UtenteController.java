@@ -41,6 +41,7 @@ public class UtenteController {
 		return nextPage;
 	}
 	
+	
 	@RequestMapping(value = "/singUp")
 	public String singUp(Model model) {
 		model.addAttribute("utente", new Utente());
