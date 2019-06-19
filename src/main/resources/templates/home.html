@@ -17,7 +17,7 @@
 				<a th:href="@{'/collezionePersonale'}"><input class="button" type="button"
 					value="LA MIA COLLEZIONE" /></a>
 					
-				<a th:href="@{'/logOut'}"><input class="button" type="button"
+				<a th:href="@{'/logout'}"><input class="button" type="button"
 					value="LOG OUT"/></a>
 					
 				<span th:if="${utente.role}!='ADMIN'">
@@ -27,7 +27,7 @@
 					
 				<span th:if="${utente.role}=='ADMIN'">
 				<a th:href="@{/aggiungiCarta}"><input class="button" type="button"
-					value="AGGIUNGI UNA CARTA" /> <!--  </span> --> </a>
+					value="AGGIUNGI UNA CARTA" /></span></a>
 	</div>
 	<div class="background-box">
 	<img th:src="@{'/assets/background.jpg'}" class="logo" />
