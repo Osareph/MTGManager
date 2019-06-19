@@ -28,6 +28,7 @@ public class DBPopulation implements ApplicationRunner{
 	private void deleteAll() {
 		System.out.print("Cancello tutto");
 		utenteRepository.deleteAll();
+		cartaRepository.deleteAll();
 	}
 	
 	private void addAll() {
