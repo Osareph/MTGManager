@@ -59,27 +59,7 @@ public class UtenteController {
 	}
 	
 	@RequestMapping(value = "/logOut")
-	public String logOut(Model model) {
-		
+	public String logOut() {
 		return "logOut";
-	}
-	
-	@RequestMapping(value = "/diventaAdmin")
-	public String admin(Model model) {
-		model.addAttribute("utente", new Utente());
-		return "admin";
-	}
-	
-	@RequestMapping(value = "/admin", method = RequestMethod.POST)
-	public String seiUnAdmin(@Valid @ModelAttribute ("utente") Utente utente, Model model){
-		String nextPage;
-		if(utenteService.utentePerUsername(utente) != null) {
-			utente.setRole("ADMIN");
-			utenteService.aggiornamentoUtente(utente);
-			nextPage = "home";
-		} else {
-			nextPage = "admin";
-		}
-		return nextPage;
 	}
 }
