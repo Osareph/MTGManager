@@ -24,13 +24,18 @@
 			th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}" />
 	</div>
 	<div class="info-box2">
-		<h4 class="subtitle">Nome carta: </h4><h1 class="title" th:text="${carta.nome}"></h1><br>
-		<h4 class="subtitle">Disponibile in: </h4><h1 class="title" th:text="${carta.quantita} + ' unit&agrave;'"></h1>
-		<h4 class="subtitle">Disponibile in: </h4><h1 class="title" th:text="${utente.nome}"></h1>
-		
-		<a th:href="@{'/moveCarta' + '/' + ${carta.id}}">
-			<input class="button2" type="button" value="Aggiungi alla collezione"></a>
+		<h4 class="subtitle">Nome carta: </h4><h1 class="title2" th:text="${carta.nome}"></h1>
+		</div>
+		<form class="form-carta" th:action="@{'/moveCarta' + '/' + ${carta.id}}" th:object="${utente}" method="post">
+			<input class="error2" th:if="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal2'">
+			<input class="type2" th:unless="${#fields.hasErrors('username')}" type="text"  th:field="*{username}"  placeholder="Username"/><br>
+			<button class="button4" type="submit"><h4>Aggiungi alla collezione</h4></button>
+		</form>
+	<div class="quantita-box">
+		<h4 class="subtitle">Disponibile in: </h4><h1 class="title2" th:text="'#' + ${carta.quantita} + ' unit&agrave;'"></h1>
 	</div>
-	
+	<div class="i-box">
+		<img class="i-img" th:src="@{/assets/i.png}"/>
+	</div>
 </body>
 </html>
