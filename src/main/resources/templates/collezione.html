@@ -12,12 +12,13 @@
 			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
 				class="logo" /></a>
 		</div>
+		<h1 class="title">COLLEZIONE</h1>
 	</div>
 	<div class="background-box3">
 		<div th:each="carta : ${carte}" class="carta-box">
 			<div class="cartaimg-box">
-				<img th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"
-					width="100" height="120">
+				<img class="cardimg" th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"/>
+			<!--  width="100" height="130 --> 
 			</div>
 			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxV" th:if="${carta.colore == 'verde'}">
 				 <h1 th:text="${carta.nome}">
@@ -41,5 +42,6 @@
 			</div></a>
 		</div>
 	</div>
+	
 </body>
 </html>
