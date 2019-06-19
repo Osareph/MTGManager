@@ -24,11 +24,6 @@ public class CartaController {
 	@Autowired
 	private CartaValidator cartaValidator;
 	
-	@RequestMapping(value = "/home")
-	public String home(){
-		return "home";	
-	}
-	
 	@RequestMapping(value = "/collezione")
 	public String collezione(Model model) {
 		model.addAttribute("carte",cartaService.tutti());

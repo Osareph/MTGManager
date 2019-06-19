@@ -18,7 +18,7 @@ import progetto.MTGManager.services.UtenteValidator;
 
 @Controller
 public class UtenteController {
-
+	
 	@Autowired
 	private UtenteService utenteService;
 	
@@ -47,23 +47,6 @@ public class UtenteController {
 		return "singUp.html";
 	}
 	
-	@RequestMapping(value = "/index")
-	public String index() {
-		return "index";
-	}
-	
-	@RequestMapping(value = "/logIn")
-	public String logIn(Model model) {
-		model.addAttribute("utente", new Utente());
-		return "home";
-	}
-	
-	@RequestMapping(value = "/logOut")
-	public String logOut(Model model) {
-		
-		return "logOut";
-	}
-	
 	@RequestMapping(value = "/diventaAdmin")
 	public String admin(Model model) {
 		model.addAttribute("utente", new Utente());
@@ -74,8 +57,8 @@ public class UtenteController {
 	public String seiUnAdmin(@Valid @ModelAttribute ("utente") Utente utente, Model model){
 		String nextPage;
 		if(utenteService.utentePerUsername(utente) != null) {
-			utente.setRole("ADMIN");
-			utenteService.aggiornamentoUtente(utente);
+			utente = utenteService.aggiornamentoUtenteAdmin(utente);
+			model.addAttribute("utente", utente);
 			nextPage = "home";
 		} else {
 			nextPage = "admin";
