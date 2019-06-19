@@ -13,7 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -34,12 +33,14 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 			
 			.formLogin()
-					.defaultSuccessUrl("/home")
+				.loginPage("/login").permitAll().
+					defaultSuccessUrl("/home")
 				
 			.and()
 			
-			.logout()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/index");
+			.logout().permitAll().
+				logoutUrl("/logout").
+					logoutSuccessUrl("/index");
 	}
 	
     @Bean

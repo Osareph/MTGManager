@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/logout}" method="post">
+  	<span sec:authentication="name"></span>
+  	<input type="submit" value="Esci"/>
+</form>
+</body>
+</html>
