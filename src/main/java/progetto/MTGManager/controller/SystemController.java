@@ -19,8 +19,7 @@ public class SystemController {
 
 
 	@RequestMapping(value = "/home")
-	public String home(Model model, @ModelAttribute ("utente") Utente utente){
-	
+	public String home(){
 		return "home";	
 	}
 	
