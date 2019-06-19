@@ -14,10 +14,10 @@
 		</div>
 		<h1 class="title">COLLEZIONE</h1>
 	</div>
-	<div>
+	<div class="background-box3">
+		<div>
 		<a th:href="@{'/home'}"><input class="button" type="button" value="TORNA ALLA HOME"/></a>
 	</div>
-	<div class="background-box3">
 		<div th:each="carta : ${carte}" class="carta-box">
 			<div class="cartaimg-box">
 				<img class="cardimg" th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"/>
