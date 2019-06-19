@@ -1,5 +1,7 @@
 package progetto.MTGManager.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -19,7 +21,9 @@ public class SystemController {
 
 
 	@RequestMapping(value = "/home")
-	public String home(){
+	public String home(@Valid @ModelAttribute("utente")Utente utente,Model model){
+		Utente tmp = this.utenteService.utentePerUsername(utente);
+		model.addAttribute("utente",tmp);
 		return "home";	
 	}
 	

@@ -16,7 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-
 public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
@@ -35,7 +34,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 
 			.formLogin()
-				.loginPage("/login").permitAll()
+				.loginPage("/login").defaultSuccessUrl("/home").permitAll()
 				
 			.and()
 			
