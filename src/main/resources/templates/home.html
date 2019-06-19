@@ -20,7 +20,12 @@
 				<a th:href="@{'/logOut'}"><input class="button" type="button"
 					value="LOG OUT"/></a>
 					
-				<!--  <span th:if="${utente.role}=='admin'"> -->
+				<span th:if="${utente.role}!='ADMIN'">
+					<a th:href="@{'/diventaAdmin'}"><input class="button" type="button"
+					value="DIVENTA ADMIN"></a>
+				</span>
+					
+				<span th:if="${utente.role}=='ADMIN'">
 				<a th:href="@{/aggiungiCarta}"><input class="button" type="button"
 					value="AGGIUNGI UNA CARTA" /> <!--  </span> --> </a>
 	</div>
