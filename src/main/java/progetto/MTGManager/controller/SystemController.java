@@ -29,7 +29,6 @@ public class SystemController {
 	public String logIn(Model model) {
 		Utente utente=new Utente();;
 		model.addAttribute("utente", utente);
-		
 		return "home";
 	}
 	
