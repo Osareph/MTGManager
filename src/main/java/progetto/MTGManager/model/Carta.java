@@ -16,6 +16,7 @@ public class Carta {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable= false)
 	private Long id;
+	@Column
 	private String nome;
 	@ManyToOne
 	private Set set;
@@ -23,12 +24,15 @@ public class Carta {
 	private Utente utente;
 	@ManyToOne
 	private Collezione collezione;
+	@Column
 	private String colore;
 	
-	public Carta(String nome, String colore) {
+	public Carta(Long id, String nome, String colore) {
+		this.id=id;
 		this.nome=nome;
 		this.colore=colore;
 	}
+	
 	public Carta() {
 		
 	}
