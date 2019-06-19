@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
+<head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
+<meta charset="ISO-8859-1">
+<title>Collezione</title>
+</head>
 <body>
-	<div>
-		<h4>Carta</h4>
-		<div>
-		Nome: <span th:text="${carta.nome}">Gigi</span>
-		</div>
-		<div>
-		</div>
-		<div>
+	<div class="top-box2">
+		<div class="logo-box2">
+			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
+				class="logo" /></a>
 		</div>
 	</div>
+	<div class="back-V" th:if="${carta.colore == 'verde'}"></div>
+	<div class="back-N" th:if="${carta.colore == 'nera'}"></div>
+	<div class="back-B" th:if="${carta.colore == 'blu'}"></div>
+	<div class="back-R" th:if="${carta.colore == 'rossa'}"></div>
+	<div class="back-W" th:if="${carta.colore == 'bianca'}"></div>
+	<div class="container-card"></div>
+	<div class="container-card2">
+		<img class="cardimg2"
+			th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}" />
+	</div>
+	<div class="info-box2">
+		<h4 class="subtitle">Nome carta: </h4><h1 class="title" th:text="${carta.nome}"></h1><br>
+		<h4 class="subtitle">Disponibile in: </h4><h1 class="title" th:text="${carta.quantita} + ' unit&agrave;'"></h1>
+		<h4 class="subtitle">Disponibile in: </h4><h1 class="title" th:text="${utente.nome}"></h1>
+		
+		<a th:href="@{'/moveCarta' + '/' + ${carta.id}}">
+			<input class="button2" type="button" value="Aggiungi alla collezione"></a>
+	</div>
+	
 </body>
 </html>

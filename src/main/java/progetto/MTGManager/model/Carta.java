@@ -1,11 +1,14 @@
 package progetto.MTGManager.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 
@@ -24,10 +27,15 @@ public class Carta {
 	@ManyToOne
 	private Collezione collezione;
 	private String colore;
+	private int quantita;
 	
-	public Carta(String nome, String colore) {
+	public Carta(String nome, String colore, int quantita) {
 		this.nome=nome;
 		this.colore=colore;
+		this.quantita=quantita;
+	}
+	public int reduceQuantita() {
+		return this.quantita--;
 	}
 	public Carta() {
 		
@@ -50,29 +58,29 @@ public class Carta {
 	public void setSet(Set set) {
 		this.set = set;
 	}
-	public Utente getUtenti() {
-		return utente;
-	}
-	public void setUtenti(Utente utenti) {
-		this.utente = utenti;
-	}
 	public Collezione getCollezione() {
 		return collezione;
 	}
 	public void setCollezione(Collezione collezione) {
 		this.collezione = collezione;
 	}
-	public Utente getUtente() {
-		return utente;
-	}
-	public void setUtente(Utente utente) {
-		this.utente = utente;
-	}
 	public String getColore() {
 		return colore;
 	}
 	public void setColore(String colore) {
 		this.colore = colore;
+	}
+	public int getQuantita() {
+		return quantita;
+	}
+	public void setQuantita(int quantita) {
+		this.quantita = quantita;
+	}
+	public Utente getUtente() {
+		return utente;
+	}
+	public void setUtente(Utente utente) {
+		this.utente = utente;
 	}
 
 	

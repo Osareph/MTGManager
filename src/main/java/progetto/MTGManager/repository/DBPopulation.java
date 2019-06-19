@@ -31,12 +31,12 @@ public class DBPopulation implements ApplicationRunner{
 	}
 	
 	private void addAll() {
-		System.out.print("Aggiungo utenti");
-		Carta c1 = new Carta("foresta","verde");
-		Carta c2 = new Carta("palude","nera");
-		Carta c3 = new Carta("isola","blu");
-		Carta c4 = new Carta("montagna","rossa");
-		Carta c5 = new Carta("pianura","bianca");
+		System.out.print("Aggiungo carte");
+		Carta c1 = new Carta("Foresta","verde",1);
+		Carta c2 = new Carta("Palude","nera",2);
+		Carta c3 = new Carta("Isola","blu",2);
+		Carta c4 = new Carta("Montagna","rossa",1);
+		Carta c5 = new Carta("Pianura","bianca",0);
 		cartaRepository.save(c1);
 		cartaRepository.save(c2);
 		cartaRepository.save(c3);

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -38,7 +39,9 @@ public class Utente {
 	
 	
 	
-	
+	public void addCarta(Carta carta) {
+		this.carte.add(carta);
+	}
 	public Long getId() {
 		return id;
 	}
