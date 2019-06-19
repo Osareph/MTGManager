@@ -20,9 +20,14 @@
 				<a th:href="@{'/logout'}"><input class="button" type="button"
 					value="LOG OUT"/></a>
 					
-				<!--  <span th:if="${utente.role}=='admin'"> -->
+				<span th:if="${utente.role}!='ADMIN'">
+					<a th:href="@{'/diventaAdmin'}"><input class="button" type="button"
+					value="DIVENTA ADMIN"></a>
+				</span>
+						
+				<span th:if="${utente.role}=='admin'">
 				<a th:href="@{/aggiungiCarta}"><input class="button" type="button"
-					value="AGGIUNGI UNA CARTA" /> <!--  </span> --> </a>
+					value="AGGIUNGI UNA CARTA" /></span> </a>
 	</div>
 	<div class="background-box">
 	<img th:src="@{'/assets/background.jpg'}" class="logo" />
