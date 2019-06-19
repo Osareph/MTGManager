@@ -25,9 +25,9 @@
 					value="DIVENTA ADMIN"></a>
 				</span>
 						
-				<span th:if="${utente.role}=='admin'">
+				<span th:if="${utente.role}=='ADMIN'">
 				<a th:href="@{/aggiungiCarta}"><input class="button" type="button"
-					value="GESISCI" /></span></a>
+					value="GESTISCI" /></span></a>
 	</div>
 	<div class="background-box">
 	<img th:src="@{'/assets/background.jpg'}" class="logo" />
