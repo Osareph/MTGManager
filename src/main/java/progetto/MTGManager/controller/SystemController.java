@@ -1,15 +1,10 @@
 package progetto.MTGManager.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.services.UtenteService;
 import progetto.MTGManager.services.UtenteUserDetailsService;
@@ -26,12 +21,7 @@ public class SystemController {
 
 	@RequestMapping(value = "/home")
 	public String home(Model model){
-		UserDetails userDetails = this.utenteUserDetailsService.loadUserByUsername("osareph");
-		String usarmane = userDetails.getUsername();
-		Utente tmp = new Utente();
-		tmp.setUsername(usarmane);
-		Utente utente = this.utenteService.utentePerUsername(tmp);
-		model.addAttribute("utente", utente);
+		model.addAttribute("utente", new Utente());
 		return "home";	
 	}
 	
