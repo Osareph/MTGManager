@@ -23,4 +23,18 @@ public class UtenteService {
 	public Utente utentePerUsername(Utente utente) {
 		return this.utenteRepository.findByUsername(utente.getUsername());
 	}
+	
+	@Transactional
+	public Utente aggiornamentoUtenteAdmin(Utente utente) {
+		Utente tmp = utenteRepository.findByUsername(utente.getUsername());
+		tmp.setRole("ADMIN");
+		return utenteRepository.save(tmp);
+	}
+	
+	@Transactional
+	public Utente aggiornamentoUtenteGuest(Utente utente) {
+		Utente tmp = utenteRepository.findByUsername(utente.getUsername());
+		tmp.setRole("GUEST");
+		return utenteRepository.save(tmp);
+	}
 }

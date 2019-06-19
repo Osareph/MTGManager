@@ -29,13 +29,12 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 		httpSecurity
 			.authorizeRequests()
 				.antMatchers("/index","/","/singUp","/confermaRegistrazione","/registrazione","/css/**","/assets/**").permitAll()
-			.antMatchers("/admin").hasAnyRole("ADMIN")
 			.anyRequest().authenticated()
 			
 			.and()
 			
 			.formLogin()
-				.defaultSuccessUrl("/home")
+					.defaultSuccessUrl("/home")
 				
 			.and()
 			
