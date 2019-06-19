@@ -12,14 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import progetto.MTGManager.model.Carta;
+import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.services.CartaService;
 import progetto.MTGManager.services.CartaValidator;
+import progetto.MTGManager.services.UtenteService;
 
 @Controller
 public class CartaController {
 	
 	@Autowired
 	private CartaService cartaService;
+	
+	@Autowired
+	private UtenteService utenteService;
 	
 	@Autowired
 	private CartaValidator cartaValidator;
@@ -65,13 +70,24 @@ public class CartaController {
 		
 	}
 	@RequestMapping(value = "/carta/{id}", method = RequestMethod.GET)
-	public String getCarta(@PathVariable ("id") Long id, Model model) {
+	public String getCarta(@PathVariable ("id") Long id, @ModelAttribute("utente") Utente utente, Model model) {
 		if(id!=null) {
+			model.addAttribute("utente", utente);
 			model.addAttribute("carta", this.cartaService.cartaPerId(id));
 			return "carta";
 		}else {
 			model.addAttribute("carte", this.cartaService.tutti());
 			return "collezione";
 		}
+	}
+	
+	@RequestMapping(value = "/moveCarta/{id}", method = RequestMethod.GET)
+	public String moveCarta(@PathVariable ("id") Long id, @ModelAttribute("utente") Utente utente, Model model) {
+			this.cartaService.cartaPerId(id).reduceQuantita();
+			this.cartaService.cartaPerId(id).setUtente(utente);
+			model.addAttribute("carta", this.cartaService.cartaPerId(id));
+			model.addAttribute("utente", utente);
+			return "carta";
+			
 	}
 }
