@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import progetto.MTGManager.model.Utente;
 
 @Controller
-public class SystemControlle {
+public class SystemController {
 
 	@RequestMapping(value = "/home")
 	public String home(Model model){

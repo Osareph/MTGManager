@@ -15,16 +15,12 @@ import progetto.MTGManager.model.Carta;
 import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.services.CartaService;
 import progetto.MTGManager.services.CartaValidator;
-import progetto.MTGManager.services.UtenteService;
 
 @Controller
 public class CartaController {
 	
 	@Autowired
 	private CartaService cartaService;
-	
-	@Autowired
-	private UtenteService utenteService;
 	
 	@Autowired
 	private CartaValidator cartaValidator;
