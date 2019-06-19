@@ -33,8 +33,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 			
 			.formLogin()
-				.loginPage("/login").permitAll().
-					defaultSuccessUrl("/home")
+				.loginPage("/login").permitAll()
 				
 			.and()
 			

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.services.UtenteService;
@@ -31,5 +32,10 @@ public class SystemController {
 	@RequestMapping(value ="/login")
 	public String login() {
 		return "login";
+	}
+	
+	@RequestMapping(value ="/logout")
+	public String logout() {
+		return "logout";
 	}
 }
