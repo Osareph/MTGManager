@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org"
+xlms="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		Inserisci il Tuo Username:
+	</div>
+	<form th:action="@{/admin}" method="post" th:object="${utente}">
+		<table>
+			<tr>
+				Username:
+				<input class="error" th:if="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
+				<input th:unless="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="Username"/>
+			</tr>
+			<tr>
+				<td><button type="submit">INVIO</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

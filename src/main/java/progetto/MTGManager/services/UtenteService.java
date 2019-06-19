@@ -23,4 +23,9 @@ public class UtenteService {
 	public Utente utentePerUsername(Utente utente) {
 		return this.utenteRepository.findByUsername(utente.getUsername());
 	}
+	
+	@Transactional
+	public Utente aggiornamentoUtente(Utente utente) {
+		return utenteRepository.save(utente);
+	}
 }
