@@ -15,9 +15,17 @@ import progetto.MTGManager.model.Carta;
 import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.services.CartaService;
 import progetto.MTGManager.services.CartaValidator;
+import progetto.MTGManager.services.UsernameValidator;
+import progetto.MTGManager.services.UtenteService;
 
 @Controller
 public class CartaController {
+	
+	@Autowired
+	private UsernameValidator usernameValidator;
+	
+	@Autowired
+	private UtenteService utenteService;
 	
 	@Autowired
 	private CartaService cartaService;
@@ -70,20 +78,31 @@ public class CartaController {
 		if(id!=null) {
 			model.addAttribute("utente", utente);
 			model.addAttribute("carta", this.cartaService.cartaPerId(id));
-			return "carta";
+			return "admin/carta";
 		}else {
 			model.addAttribute("carte", this.cartaService.tutti());
 			return "collezione";
 		}
 	}
 	
-	@RequestMapping(value = "/moveCarta/{id}", method = RequestMethod.GET)
-	public String moveCarta(@PathVariable ("id") Long id, @ModelAttribute("utente") Utente utente, Model model) {
-			this.cartaService.cartaPerId(id).reduceQuantita();
-			this.cartaService.cartaPerId(id).setUtente(utente);
-			model.addAttribute("carta", this.cartaService.cartaPerId(id));
-			model.addAttribute("utente", utente);
-			return "carta";
+	@RequestMapping(value = "/moveCarta/{id}", method = RequestMethod.POST)
+	public String moveCarta(@PathVariable ("id") Long id,@Valid @ModelAttribute("utente") Utente utente, Model model, BindingResult bindingResult) {
+			this.usernameValidator.validate(utente, bindingResult);
+			if(!bindingResult.hasErrors() && this.utenteService.utentePerUsername(utente)!=null) {
+				Utente tmp= new Utente();
+				tmp= this.utenteService.utentePerUsername(utente);
+				this.cartaService.cartaPerId(id).reduceQuantita();
+				this.cartaService.cartaPerId(id).setUtente(tmp);
+				this.cartaService.aggiungiCarta(this.cartaService.cartaPerId(id));
+				tmp.addCarta(this.cartaService.cartaPerId(id));
+				this.utenteService.aggiungiUtente(tmp);
+				model.addAttribute("carta", this.cartaService.cartaPerId(id));
+				model.addAttribute("utente", tmp);
+			}else {
+				model.addAttribute("utente", utente);
+				model.addAttribute("carta", this.cartaService.cartaPerId(id));
+			}
+			return "admin/carta";
 			
 	}
 }
