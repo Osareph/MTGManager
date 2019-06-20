@@ -755,6 +755,23 @@ input.error2{
 	background: #fe3c00;
 	opacity: 0.9;
 }
+.buttonAdmin {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	position: absolute;
+	border:none; 
+	top:100%;
+	left:22%;
+	width: 15%;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-radius: 4px;
+	background: #fe3c00;
+	opacity: 0.9;
+}
 .buttonBlocked {
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -773,6 +790,11 @@ input.error2{
 	opacity: 0.9;
 }
 .button4:hover{
+	text-decoration:underline;
+	background: #e53600;
+	color: white;
+}
+.buttonAdmin:hover{
 	text-decoration:underline;
 	background: #e53600;
 	color: white;

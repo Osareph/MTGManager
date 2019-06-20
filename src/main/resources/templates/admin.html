@@ -13,6 +13,7 @@ xlms="http://www.w3.org/1999/html">
 		</div>
 	</div>
 	<div class="background-box2">
+	<div class="form-box">
 	<div>
 		Inserisci il Tuo Username:
 	</div>
@@ -24,10 +25,11 @@ xlms="http://www.w3.org/1999/html">
 				<input th:unless="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="Username"/>
 			</tr>
 			<tr>
-				<td><button  type="submit">INVIO</button></td>
+				<td><button class="buttonAdmin" type="submit">INVIO</button></td>
 			</tr>
 		</table>
 	</form>
+	</div>
 	</div>
 </body>
 </html>
