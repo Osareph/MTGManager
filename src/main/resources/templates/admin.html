@@ -2,10 +2,17 @@
 <html xmls:th="http://www.thymeleaf.org"
 xlms="http://www.w3.org/1999/html">
 <head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="top-banner">
+		<div class="logo-box">
+			<a th:href="@{'/index'}"><img th:src="@{'/assets/logo.png'}" class="logo" /></a>
+		</div>
+	</div>
+	<div class="background-box2">
 	<div>
 		Inserisci il Tuo Username:
 	</div>
@@ -17,9 +24,10 @@ xlms="http://www.w3.org/1999/html">
 				<input th:unless="${#fields.hasErrors('username')}" type="text" th:field="*{username}"  placeholder="Username"/>
 			</tr>
 			<tr>
-				<td><button type="submit">INVIO</button></td>
+				<td><button  type="submit">INVIO</button></td>
 			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>
