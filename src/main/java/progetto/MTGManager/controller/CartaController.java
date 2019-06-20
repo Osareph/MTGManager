@@ -35,7 +35,7 @@ public class CartaController {
 	
 	@RequestMapping(value = "/collezione")
 	public String collezione(Model model) {
-		model.addAttribute("carte",cartaService.tutti());
+		model.addAttribute("carte",cartaService.cartaPerUtente_id(null));
 		return "collezione";
 	}
 	
@@ -94,9 +94,11 @@ public class CartaController {
 		tmp= this.utenteService.utentePerUsername(utente);
 			if(tmp!=null) {
 				this.cartaService.cartaPerId(id).reduceQuantita();
-				this.cartaService.cartaPerId(id).setUtente(tmp);
-				this.cartaService.aggiungiCarta(this.cartaService.cartaPerId(id));
-				tmp.addCarta(this.cartaService.cartaPerId(id));
+				Carta cartaTmp= this.cartaService.cartaPerId(id);
+				Carta newCarta = new Carta(cartaTmp.getNome(),cartaTmp.getColore(),1);
+				newCarta.setUtente(tmp);
+				this.cartaService.aggiungiCarta(newCarta);
+				tmp.addCarta(newCarta);
 				this.utenteService.aggiungiUtente(tmp);
 				model.addAttribute("carta", this.cartaService.cartaPerId(id));
 				model.addAttribute("utente", tmp);

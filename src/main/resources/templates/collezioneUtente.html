@@ -8,12 +8,12 @@
 </head>
 <body>
 	<div class="top-box2">
-		<a th:href="@{'/home'}"><input class="buttonHome" type="button" value="TORNA ALLA HOME"></a>
+		<a th:href="@{'/collezioniUtenti'}"><input class="buttonHome" type="button" value="TORNA AD UTENTI"></a>
 		<div class="logo-box2">
 			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
 				class="logo" /></a>
 		</div>
-		<h1 class="title">COLLEZIONE</h1>
+		<h1 class="title" th:text="'Collezione di ' + ${utente.username}">COLLEZIONE DI</h1>
 	</div>
 	<div class="background-box3">
 	

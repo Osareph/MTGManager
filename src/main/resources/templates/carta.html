@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="top-box2">
+		<a th:href="@{'/collezione'}"><input class="buttonHome" type="button" value="TORNA ALLA COLLEZIONE"></a>
 		<div class="logo-box2">
 			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
 				class="logo" /></a>
@@ -30,7 +31,9 @@
 			<h4 class="subtitle">Username Destinatario:</h4>
 			<input class="error2" th:if="${error == 1}" type="text" th:field="*{username}"  placeholder="UTENTE NON TROVATO!" oninput="this.className='normal2'">
 			<input class="type2" th:if="${error == 0}" type="text"  th:field="*{username}"  placeholder="Username"/><br>
-			<button class="button4" type="submit"><h4>Aggiungi alla collezione</h4></button>
+			<button class="button4" th:if="${carta.quantita > 0}" type="submit"><h4>AGGIUNGI ALLA COLLEZIONE</h4></button>
+			<button class="buttonBlocked" th:unless="${carta.quantita > 0}" type="button"><h4>ESAURITA</h4></button>
+			
 		</form>
 	<div class="quantita-box">
 		<h4 class="subtitle">Disponibile in: </h4><h1 class="title2" th:text="'#' + ${carta.quantita} + ' unit&agrave;'"></h1>
