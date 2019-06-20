@@ -3,6 +3,7 @@ package progetto.MTGManager.repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import progetto.MTGManager.model.Carta;
@@ -46,7 +47,8 @@ public class DBPopulation implements ApplicationRunner{
 		cartaRepository.save(c4);
 		cartaRepository.save(c5);
 		cartaRepository.save(c6);
-		Utente u1 = new Utente("Gigino","pass1");
+		String password = new BCryptPasswordEncoder().encode("asd");
+		Utente u1 = new Utente("Gigino",password);
 		utenteRepository.save(u1);
 
 
