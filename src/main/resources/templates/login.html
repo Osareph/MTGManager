@@ -3,25 +3,32 @@
 	xlms="http://www.w3.org/1999/html">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
+<title>Log In</title>
 </head>
 <body>
-<div>
-  <h2>Accedi</h2>
-  <div th:if="${param.error}">
-    Nome utente o password errati!
-  </div>
+<div class="top-banner">
+		<div class="logo-box">
+			<a th:href="@{'/index'}"><img th:src="@{'/assets/logo.png'}" class="logo" /></a>
+		</div>
+	</div>
+<div class="background-LogIn">
+  <h1 class="titleLog">ACCEDI</h1>
   <div th:if="${param.logout}">
     Hai effettuato il logout. A presto!
   </div>
-  <form th:action="@{/login}" method="post">
+  <form class="form-boxLog" th:action="@{/login}" method="post">
     <div>
-      <label>Username : <input type="text" name="username"/></label>
+      Username<br> <input th:unless="${param.error}" type="text" name="username" placeholder="Username"/>
+      	<input th:if="${param.error}" class="error" type="text" name="username" placeholder="USERNAME O PASSWORD ERRATI!" oninput="this.className='normal'"/>
     </div>
     <div>
-      <label>Password: <input type="password" name="password"/></label>
+      Password<br> <input th:unless="${param.error}" type="password" name="password" placeholder="Password"/>
+      	<input th:if="${param.error}" class="error" type="text" name="password" placeholder="USERNAME O PASSWORD ERRATI!" oninput="this.className='normal'"/>
     </div>
-    <div><input type="submit" value="Entra"/></div>
+    <button class="button3" type="submit">
+    	<h4>ENTRA</h4>
+    </button>
   </form>
 </div>
 </body>

@@ -74,11 +74,12 @@ public class CartaController {
 		
 	}
 	@RequestMapping(value = "/carta/{id}", method = RequestMethod.GET)
-	public String getCarta(@PathVariable ("id") Long id, @ModelAttribute("utente") Utente utente, Model model) {
+	public String getCarta(@PathVariable ("id") Long id,  Model model) {
 		if(id!=null) {
-			model.addAttribute("utente", utente);
+			model.addAttribute("utente", new Utente());
 			model.addAttribute("carta", this.cartaService.cartaPerId(id));
-			return "admin/carta";
+			model.addAttribute("error", 0);
+			return "carta";
 		}else {
 			model.addAttribute("carte", this.cartaService.tutti());
 			return "collezione";
@@ -87,10 +88,10 @@ public class CartaController {
 	
 	@RequestMapping(value = "/moveCarta/{id}", method = RequestMethod.POST)
 	public String moveCarta(@PathVariable ("id") Long id,@Valid @ModelAttribute("utente") Utente utente, Model model, BindingResult bindingResult) {
-			this.usernameValidator.validate(utente, bindingResult);
-			if(!bindingResult.hasErrors() && this.utenteService.utentePerUsername(utente)!=null) {
-				Utente tmp= new Utente();
-				tmp= this.utenteService.utentePerUsername(utente);
+		this.usernameValidator.validate(utente, bindingResult);
+		Utente tmp= new Utente();
+		tmp= this.utenteService.utentePerUsername(utente);
+			if(tmp!=null) {
 				this.cartaService.cartaPerId(id).reduceQuantita();
 				this.cartaService.cartaPerId(id).setUtente(tmp);
 				this.cartaService.aggiungiCarta(this.cartaService.cartaPerId(id));
@@ -98,11 +99,13 @@ public class CartaController {
 				this.utenteService.aggiungiUtente(tmp);
 				model.addAttribute("carta", this.cartaService.cartaPerId(id));
 				model.addAttribute("utente", tmp);
+				model.addAttribute("error", 0);
 			}else {
-				model.addAttribute("utente", utente);
+				model.addAttribute("utente", new Utente());
 				model.addAttribute("carta", this.cartaService.cartaPerId(id));
+				model.addAttribute("error",1);
 			}
-			return "admin/carta";
+			return "carta";
 			
 	}
 }
