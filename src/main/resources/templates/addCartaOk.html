@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org"
+xlms="http://www.w3.org/1999/html" >
+<head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="cartaimg-box">
+		<img class="cardimg" th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"/>
+	</div>
+	<div>
+		<a th:href="@{'/home'}"><input type="button" class="button3" value="Invio" /></a>
+	</div>
+</body>
+</html>

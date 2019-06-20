@@ -13,6 +13,17 @@
 			<td><input type="text" th:field="*{nome}"></td>
 			<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
 			</tr>
+			<tr>
+			<td>Quantità:</td>
+			<td><input type="text" th:field="*{quantita}"></td>
+			<td th:if="${#fields.hasErrors('quantita')}" th:errors="*{quantita}"></td>
+			</tr>
+			<td>Colore:</td>
+			<td><input type="text" th:field="*{colore}"></td>
+			<td th:if="${#fields.hasErrors('colore')}" th:errors="*{colore}"></td>
+			</tr>
+			<button class="button3" type="submit">
+    		<h4>INSERISCI CARTA</h4>
 		</table>
 	</form>
 
