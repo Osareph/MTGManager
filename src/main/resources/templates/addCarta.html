@@ -2,19 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<form th:action="@{/addCarta}" method="post" th:object="${carta}">
-		<table>
-			<tr>
-			<td>Nome:</td>
-			<td><input type="text" th:field="*{nome}"></td>
-			<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
-			</tr>
+<body class="background-box3">
+	<div class="top-banner">
+		<div class="logo-box">
+			<a th:href="@{'/index'}"><img th:src="@{'/assets/logo.png'}" class="logo" /></a>
+		</div>
+	</div>
+	<div class="form-box">
+		<form th:action="@{/addCarta}" method="post" th:object="${carta}">
+				Nome<br>
+				<input class="error" th:if="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
+				<input th:unless="${#fields.hasErrors('nome')}" type="text" th:field="*{nome}" placeholder="Nome"/>
+				<br>
+				quantità<br>
+				<input class="error" th:if="${#fields.hasErrors('quantita')}" type="text" th:field="*{quantita}" placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
+				<input th:unless="${#fields.hasErrors('quantita')}" type="text" th:field="*{quantita}" placeholder="Quantita"/>
+				<br>
+				Colore<br>
+				<input class="error" th:if="${#fields.hasErrors('colore')}" type="text" th:field="*{colore}" placeholder="CAMPO OBBLIGATORIO!" oninput="this.className='normal'"/>
+				<input th:unless="${#fields.hasErrors('colore')}" type="text" th:field="*{colore}" placeholder="Colore"/>
+				<br>
+			<button class="button3" type="submit">
+    		<h4>INSERISCI CARTA</h4>
 		</table>
 	</form>
-
+	</div>
 </body>
 </html>

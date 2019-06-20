@@ -156,6 +156,5 @@ public class CartaController {
 				model.addAttribute("error",1);
 			}
 			return "carta";
-			
 	}
 }

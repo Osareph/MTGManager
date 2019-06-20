@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmls:th="http://www.thymeleaf.org"
-	xlms="http://www.w3.org/1999/html">
+	xlms="http://www.w3.org/1999/html"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <link rel="stylesheet" th:href="@{/css/home.css}" />
 <meta charset="ISO-8859-1">
@@ -19,7 +20,7 @@
 					
 				<a th:href="@{'/logout'}"><input class="button" type="button"
 					value="LOG OUT"/></a>
-					
+				
 				<span th:if="${utente.role}!='ADMIN'">
 					<a th:href="@{'/diventaAdmin'}"><input class="button" type="button"
 					value="DIVENTA ADMIN"></a>
