@@ -42,4 +42,9 @@ public class CartaService {
 	public List<Carta> tutti(){
 		return (List<Carta>) cartaRepository.findAll();
 	}
+	
+	@Transactional
+	public List<Carta> cartaPerUtente_id(Long id){
+		return (List<Carta>) cartaRepository.findByUtente_id(id);
+	}
 }

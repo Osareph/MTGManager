@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmls:th="http://www.thymeleaf.org"
+	xlms="http://www.w3.org/1999/html">
+<head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
+<meta charset="ISO-8859-1">
+<title>Collezione</title>
+</head>
+<body>
+	<div class="top-box2">
+		<a th:href="@{'/home'}"><input class="buttonHome" type="button" value="TORNA ALLA HOME"></a>
+		<div class="logo-box2">
+			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
+				class="logo" /></a>
+		</div>
+		<h1 class="title">COLLEZIONE</h1>
+	</div>
+	<div class="background-box3">
+	
+		<div th:each="carta : ${carte}" class="carta-box">
+			<div class="cartaimg-box">
+				<img class="cardimg" th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"/>
+			<!--  width="100" height="130 --> 
+			</div>
+			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxV" th:if="${carta.colore == 'verde'}">
+				 <h1 th:text="${carta.nome}">
+					paolo</h1>
+			</div></a>
+			<a th:href="@{'/carta' + '/' + ${carta.id}}" ><div class="info-boxN" th:if="${carta.colore == 'nera'}">
+				<h1 th:text="${carta.nome}">
+					paolo</h1>
+			</div></a>
+			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxB" th:if="${carta.colore == 'blu'}">
+				 <h1 th:text="${carta.nome}">
+					paolo</h1>
+			</div></a>
+			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxR" th:if="${carta.colore == 'rossa'}">
+				 <h1 th:text="${carta.nome}">
+					paolo</h1>
+			</div></a>
+			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxW" th:if="${carta.colore == 'bianca'}">
+				 <h1 th:text="${carta.nome}">
+					paolo</h1>
+			</div></a>
+		</div>
+	</div>
+	
+</body>
+</html>

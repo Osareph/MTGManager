@@ -45,4 +45,9 @@ public class UtenteService {
 	public List<Utente> tutti(){
 		return (List<Utente>) this.utenteRepository.findAll();
 	}
+	
+	@Transactional
+	public Utente utentePerId(Long id) {
+		return (Utente)utenteRepository.findById(id).get();
+	}
 }

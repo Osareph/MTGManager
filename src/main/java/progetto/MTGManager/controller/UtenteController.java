@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import progetto.MTGManager.model.Utente;
+import progetto.MTGManager.services.CartaService;
 import progetto.MTGManager.services.UtenteService;
 import progetto.MTGManager.services.UtenteValidator;
 
@@ -21,6 +23,9 @@ public class UtenteController {
 	
 	@Autowired
 	private UtenteService utenteService;
+	
+	@Autowired
+	private CartaService cartaService;
 	
 	@Autowired
 	private UtenteValidator utenteValidator;
@@ -41,6 +46,17 @@ public class UtenteController {
 		return nextPage;
 	}
 	
+	@RequestMapping(value = "/utente/{id}", method = RequestMethod.GET)
+	public String getUtente(@PathVariable("id") Long id, Model model) {
+		if(id!=null) {
+			model.addAttribute("utente", this.utenteService.utentePerId(id));
+			model.addAttribute("carte", this.cartaService.cartaPerUtente_id(id));
+			return "collezioneUtente";
+		}else {
+			model.addAttribute("utenti", this.utenteService.tutti());
+			return "collezioniUtenti";
+		}
+	}
 	
 	@RequestMapping(value = "/singUp")
 	public String singUp(Model model) {

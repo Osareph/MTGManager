@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import progetto.MTGManager.model.Carta;
+import progetto.MTGManager.model.Utente;
 
 /*
  * è un componente della nostra applicazione
@@ -45,6 +46,8 @@ public class DBPopulation implements ApplicationRunner{
 		cartaRepository.save(c4);
 		cartaRepository.save(c5);
 		cartaRepository.save(c6);
+		Utente u1 = new Utente("Gigino","pass1");
+		utenteRepository.save(u1);
 
 
 	}

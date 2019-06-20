@@ -37,7 +37,10 @@ public class Utente {
 	@OneToMany(mappedBy= "utente")
 	private List<Carta> carte;
 	
-	
+	public Utente(String username, String parolaSegreta) {
+		this.username = username;
+		this.parolaSegreta = parolaSegreta;
+	}
 	
 	public void addCarta(Carta carta) {
 		this.carte.add(carta);

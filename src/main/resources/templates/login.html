@@ -24,7 +24,7 @@
     </div>
     <div>
       Password<br> <input th:unless="${param.error}" type="password" name="password" placeholder="Password"/>
-      	<input th:if="${param.error}" class="error" type="text" name="password" placeholder="USERNAME O PASSWORD ERRATI!" oninput="this.className='normal'"/>
+      	<input th:if="${param.error}" class="error" type="password" name="password" placeholder="USERNAME O PASSWORD ERRATI!" oninput="this.className='normal'"/>
     </div>
     <button class="button3" type="submit">
     	<h4>ENTRA</h4>
