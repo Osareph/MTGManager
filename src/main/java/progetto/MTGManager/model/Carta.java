@@ -25,8 +25,6 @@ public class Carta {
 	private Set set;
 	@ManyToOne
 	private Utente utente;
-	@ManyToOne
-	private Collezione collezione;
 	@Column
 	private String colore;
 	private int quantita;
@@ -69,12 +67,6 @@ public class Carta {
 	}
 	public void setSet(Set set) {
 		this.set = set;
-	}
-	public Collezione getCollezione() {
-		return collezione;
-	}
-	public void setCollezione(Collezione collezione) {
-		this.collezione = collezione;
 	}
 	public String getColore() {
 		return colore;
