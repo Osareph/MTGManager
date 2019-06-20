@@ -29,7 +29,6 @@
 		</div>
 		<form class="form-carta" th:action="@{'/removeCarta' + '/' + ${carta.id} + '/' + ${trueUtente.id}}" th:object="${utente}" method="post">
 			<h4 class="subtitle" th:text="'Password di ' + ${trueUtente.username}"></h4>
-			<h4 th:text="${trueUtente.parolaSegreta}"></h4>
 			
 			
 			<input class="error2" th:if="${error == 1}" type="password" th:field="*{parolaSegreta}"  placeholder="PASSWORD SBAGLIATA!" oninput="this.className='normal2'">
@@ -38,9 +37,6 @@
 			<button class="buttonBlocked" th:unless="${carta.quantita > 0}" type="button"><h4>ESAURITA</h4></button>
 			
 		</form>
-	<div class="quantita-box">
-		<h4 class="subtitle">Disponibile in: </h4><h1 class="title2" th:text="'#' + ${carta.quantita} + ' unit&agrave;'"></h1>
-	</div>
 	<!--
 	<div class="i-box" onclick="this.className='evolution'">
 		<img class="i-img" th:src="@{/assets/i.png}" onclick="this.className='i-Hide'"/>

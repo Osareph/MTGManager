@@ -36,6 +36,13 @@ public class Carta {
 		this.colore=colore;
 		this.quantita=quantita;
 	}
+	public Carta(String nome, String colore, int quantita, Utente utente) {
+		this.nome=nome;
+		this.colore=colore;
+		this.quantita=quantita;
+		this.utente=utente;
+	}
+	
 	public int reduceQuantita() {
 		return this.quantita--;
 	}

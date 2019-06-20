@@ -39,9 +39,10 @@ public class Utente {
 	
 	private double random;
 	
-	public Utente(String username, String parolaSegreta) {
+	public Utente(String username, String parolaSegreta, String role) {
 		this.username = username;
 		this.parolaSegreta = parolaSegreta;
+		this.role= role;
 	}
 	
 	public void addCarta(Carta carta) {

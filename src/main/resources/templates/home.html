@@ -17,9 +17,7 @@
 
 				<a th:href="@{'/collezioniUtenti'}"><input class="button" type="button"
 					value="COLLEZIONI UTENTI" /></a>
-					
-				<a th:href="@{'/logout'}"><input class="button" type="button"
-					value="LOG OUT"/></a>
+
 				
 				<span th:if="${utente.role}!='ADMIN'">
 					<a th:href="@{'/diventaAdmin'}"><input class="button" type="button"
@@ -29,6 +27,11 @@
 				<span th:if="${utente.role}=='ADMIN'">
 				<a th:href="@{/aggiungiCarta}"><input class="button" type="button"
 					value="GESTISCI" /></span></a>
+					
+				<form class="log-out" th:action="@{/logout}" method="post">
+  				<span sec:authentication="name"></span>
+  				<input class="buttonLogOut" type="submit" value="LOG OUT"/>
+  				</form>
 	</div>
 	<div class="background-box">
 	<img th:src="@{'/assets/background.jpg'}" class="logo" />

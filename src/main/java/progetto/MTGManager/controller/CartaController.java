@@ -113,7 +113,7 @@ public class CartaController {
 		Utente trueUtente= new Utente();
 		trueUtente= this.utenteService.utentePerId(id_u);
 		String provaPsw = utente.getParolaSegreta();
-		if(trueUtente.getParolaSegreta().equals(provaPsw)) {
+		if(new BCryptPasswordEncoder().matches(provaPsw, trueUtente.getParolaSegreta())) {
 				String tmpNome= this.cartaService.cartaPerId(id).getNome();
 				this.cartaService.cartaPerNomeAndUtente_id(tmpNome, null).improoveQuantita();
 				this.cartaService.aggiungiCarta(this.cartaService.cartaPerNomeAndUtente_id(tmpNome, null));
