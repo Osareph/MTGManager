@@ -17,7 +17,6 @@ L'admin può aggiungere le carte alla collezione condivisa;
 L’utente, previo log in, potrà visualizzare la sua collezione attuale e scegliere una o più carte da rimuovere, facendole tornare nella collezione condivisa;
 
 
-
 Esistono già gli Utenti: 
 
 Admin---- admin
@@ -26,3 +25,5 @@ Manuel--- psw2
 Gigino--- psw3
 
 SONO IMPORTANTI LE MAIUSCOLE!!
+
+inoltre ci sono già inserite 8 Carte
