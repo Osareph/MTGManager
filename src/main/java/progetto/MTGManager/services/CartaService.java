@@ -47,4 +47,13 @@ public class CartaService {
 	public List<Carta> cartaPerUtente_id(Long id){
 		return (List<Carta>) cartaRepository.findByUtente_id(id);
 	}
+	@Transactional
+	public Carta cartaPerNomeAndUtente_id(String nome, Long id){
+		return cartaRepository.findByNomeAndUtente_id(nome,id);
+	}
+	
+	@Transactional
+	public void cancellaPerId(Long id){
+		cartaRepository.deleteById(id);
+	}
 }

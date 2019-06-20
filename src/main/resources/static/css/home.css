@@ -430,6 +430,126 @@ input {
 	padding-left: 10%;
 	transition: width 0.5s;
 }
+.info-boxU1{
+	position:absolute;
+	width:100%;
+	
+	top:0;
+	left:0%;
+	z-index:1;
+	height:95%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/backUser1.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 10%;
+	transition: width 0.5s;
+}
+.info-boxU2{
+	position:absolute;
+	width:100%;
+	
+	top:0;
+	left:0%;
+	z-index:1;
+	height:95%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/backUser2.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 10%;
+	transition: width 0.5s;
+}
+.info-boxU3{
+	position:absolute;
+	width:100%;
+	
+	top:0;
+	left:0%;
+	z-index:1;
+	height:95%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/backUser3.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 10%;
+	transition: width 0.5s;
+}
+.info-boxU4{
+	position:absolute;
+	width:100%;
+	
+	top:0;
+	left:0%;
+	z-index:1;
+	height:95%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/backUser4.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 10%;
+	transition: width 0.5s;
+}
+.info-boxU5{
+	position:absolute;
+	width:100%;
+	
+	top:0;
+	left:0%;
+	z-index:1;
+	height:95%;
+	border:none;
+	display: inline-block;
+	background-image: url(/assets/backUser5.jpg);
+	opacity:0.8;
+	padding-top:1%;
+	padding-left: 10%;
+	transition: width 0.5s;
+}
+.info-boxU1:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 110%;
+	height:105%;
+	z-index:2;
+	border: 2px solid black;
+}
+.info-boxU2:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 110%;
+	height:105%;
+	z-index:2;
+	border: 2px solid black;
+}
+.info-boxU3:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 110%;
+	height:105%;
+	z-index:2;
+	border: 2px solid black;
+}
+.info-boxU4:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 110%;
+	height:105%;
+	z-index:2;
+	border: 2px solid black;
+}
+.info-boxU5:hover{
+	opacity:1;
+	overflow: scroll;
+	width: 110%;
+	height:105%;
+	z-index:2;
+	border: 2px solid black;
+}
 .info-boxV:hover{
 	opacity:1;
 	overflow: scroll;

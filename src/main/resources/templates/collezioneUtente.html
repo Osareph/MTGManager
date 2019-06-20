@@ -22,23 +22,23 @@
 				<img class="cardimg" th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"/>
 			<!--  width="100" height="130 --> 
 			</div>
-			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxV" th:if="${carta.colore == 'verde'}">
+			<a th:href="@{'/cartaP' + '/' + ${carta.id} + '/' + ${utente.id}}"><div class="info-boxV" th:if="${carta.colore == 'verde'}">
 				 <h1 th:text="${carta.nome}">
 					paolo</h1>
 			</div></a>
-			<a th:href="@{'/carta' + '/' + ${carta.id}}" ><div class="info-boxN" th:if="${carta.colore == 'nera'}">
+			<a th:href="@{'/cartaP' + '/' + ${carta.id} + '/' + ${utente.id}}" ><div class="info-boxN" th:if="${carta.colore == 'nera'}">
 				<h1 th:text="${carta.nome}">
 					paolo</h1>
 			</div></a>
-			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxB" th:if="${carta.colore == 'blu'}">
+			<a th:href="@{'/cartaP' + '/' + ${carta.id} + '/' + ${utente.id}}"><div class="info-boxB" th:if="${carta.colore == 'blu'}">
 				 <h1 th:text="${carta.nome}">
 					paolo</h1>
 			</div></a>
-			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxR" th:if="${carta.colore == 'rossa'}">
+			<a th:href="@{'/cartaP' + '/' + ${carta.id} + '/' + ${utente.id}}"><div class="info-boxR" th:if="${carta.colore == 'rossa'}">
 				 <h1 th:text="${carta.nome}">
 					paolo</h1>
 			</div></a>
-			<a th:href="@{'/carta' + '/' + ${carta.id}}"><div class="info-boxW" th:if="${carta.colore == 'bianca'}">
+			<a th:href="@{'/cartaP' + '/' + ${carta.id} + '/' + ${utente.id}}"><div class="info-boxW" th:if="${carta.colore == 'bianca'}">
 				 <h1 th:text="${carta.nome}">
 					paolo</h1>
 			</div></a>

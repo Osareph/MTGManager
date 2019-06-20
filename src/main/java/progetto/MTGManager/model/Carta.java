@@ -39,6 +39,9 @@ public class Carta {
 	public int reduceQuantita() {
 		return this.quantita--;
 	}
+	public int improoveQuantita() {
+		return this.quantita++;
+	}
 	public Carta() {
 		
 	}

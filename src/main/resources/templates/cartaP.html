@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<link rel="stylesheet" th:href="@{/css/home.css}" />
+<meta charset="ISO-8859-1">
+<title>Collezione</title>
+</head>
+<body>
+	<div class="top-box2">
+		<a th:href="@{'/collezione'}"><input class="buttonHome" type="button" value="TORNA ALLA COLLEZIONE"></a>
+		<div class="logo-box2">
+			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
+				class="logo" /></a>
+		</div>
+	</div>
+	<div class="back-V" th:if="${carta.colore == 'verde'}"></div>
+	<div class="back-N" th:if="${carta.colore == 'nera'}"></div>
+	<div class="back-B" th:if="${carta.colore == 'blu'}"></div>
+	<div class="back-R" th:if="${carta.colore == 'rossa'}"></div>
+	<div class="back-W" th:if="${carta.colore == 'bianca'}"></div>
+	<div class="container-card"></div>
+	<div class="container-card2">
+		<img class="cardimg2"
+			th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}" />
+	</div>
+	<div class="info-box2">
+		<h4 class="subtitle">Nome carta: </h4><h1 class="title2" th:text="${carta.nome}"></h1>
+		</div>
+		<form class="form-carta" th:action="@{'/removeCarta' + '/' + ${carta.id} + '/' + ${trueUtente.id}}" th:object="${utente}" method="post">
+			<h4 class="subtitle" th:text="'Password di ' + ${trueUtente.username}"></h4>
+			<h4 th:text="${trueUtente.parolaSegreta}"></h4>
+			
+			
+			<input class="error2" th:if="${error == 1}" type="password" th:field="*{parolaSegreta}"  placeholder="PASSWORD SBAGLIATA!" oninput="this.className='normal2'">
+			<input class="type2" th:if="${error == 0}" type="password"  th:field="*{parolaSegreta}"  placeholder="Password..."/><br>
+			<button class="button4" th:if="${carta.quantita > 0}" type="submit"><h4>RIMUOVI ALLA COLLEZIONE</h4></button>
+			<button class="buttonBlocked" th:unless="${carta.quantita > 0}" type="button"><h4>ESAURITA</h4></button>
+			
+		</form>
+	<div class="quantita-box">
+		<h4 class="subtitle">Disponibile in: </h4><h1 class="title2" th:text="'#' + ${carta.quantita} + ' unit&agrave;'"></h1>
+	</div>
+	<!--
+	<div class="i-box" onclick="this.className='evolution'">
+		<img class="i-img" th:src="@{/assets/i.png}" onclick="this.className='i-Hide'"/>
+	</div> -->
+</body>
+</html>

@@ -1,8 +1,11 @@
 package progetto.MTGManager.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -41,6 +44,10 @@ public class CartaController {
 	
 	@RequestMapping(value = "/collezioniUtenti")
 	public String collezionePersonale(Model model) {
+		for (Utente element: this.utenteService.tutti()) {
+			element.setRandom(Math.floor(Math.random()*10));
+			this.utenteService.aggiungiUtente(element);
+		}	
 		model.addAttribute("utenti", this.utenteService.tutti());
 		return "collezioniUtenti";
 	}
@@ -85,6 +92,46 @@ public class CartaController {
 			model.addAttribute("carte", this.cartaService.tutti());
 			return "collezione";
 		}
+	}
+	@RequestMapping(value = "/cartaP/{id}/{id_u}", method = RequestMethod.GET)
+	public String getCartaP(@PathVariable ("id") Long id,@PathVariable("id_u") Long id_u, Utente utente,  Model model) {
+		if(id!=null) {
+			model.addAttribute("trueUtente", this.utenteService.utentePerId(id_u));
+			model.addAttribute("carta", this.cartaService.cartaPerId(id));
+			model.addAttribute("utente", new Utente());
+			model.addAttribute("error", 0);
+			return "cartaP";
+		}else {
+			model.addAttribute("carte", this.cartaService.tutti());
+			model.addAttribute("utente", this.utenteService.utentePerId(id_u));
+			return "collezioneUtente";
+		}
+	}
+	
+	@RequestMapping(value = "/removeCarta/{id}/{id_u}", method = RequestMethod.POST)
+	public String removeCarta(@PathVariable ("id") Long id, @PathVariable ("id_u") Long id_u, @Valid @ModelAttribute("utente") Utente utente, Model model, BindingResult bindingResult) {
+		Utente trueUtente= new Utente();
+		trueUtente= this.utenteService.utentePerId(id_u);
+		String provaPsw = utente.getParolaSegreta();
+		if(trueUtente.getParolaSegreta().equals(provaPsw)) {
+				String tmpNome= this.cartaService.cartaPerId(id).getNome();
+				this.cartaService.cartaPerNomeAndUtente_id(tmpNome, null).improoveQuantita();
+				this.cartaService.aggiungiCarta(this.cartaService.cartaPerNomeAndUtente_id(tmpNome, null));
+				this.cartaService.cancellaPerId(id);
+				
+	
+				model.addAttribute("carte", this.cartaService.cartaPerUtente_id(id_u));
+				model.addAttribute("utente", trueUtente);
+				return "collezioneUtente";
+			}else {
+	
+				model.addAttribute("utente", utente);
+				model.addAttribute("carta", this.cartaService.cartaPerId(id));
+				model.addAttribute("trueUtente", trueUtente);
+				model.addAttribute("error",1);
+				return "cartaP";
+			}
+			
 	}
 	
 	@RequestMapping(value = "/moveCarta/{id}", method = RequestMethod.POST)

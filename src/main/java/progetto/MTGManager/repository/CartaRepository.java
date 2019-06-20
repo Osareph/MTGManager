@@ -14,6 +14,9 @@ public interface CartaRepository extends CrudRepository<Carta, Long> {
 	Carta findBySet(Set set);
 	
 	List<Carta> findByUtente_id(Long id);
-
+	
+	Carta findByNomeAndUtente_id(String nome, Long id);
+	
+	void deleteById(Long id);
 
 }

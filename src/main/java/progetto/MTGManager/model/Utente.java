@@ -37,6 +37,8 @@ public class Utente {
 	@OneToMany(mappedBy= "utente")
 	private List<Carta> carte;
 	
+	private double random;
+	
 	public Utente(String username, String parolaSegreta) {
 		this.username = username;
 		this.parolaSegreta = parolaSegreta;
@@ -96,5 +98,13 @@ public class Utente {
 	}
 	
 	public Utente() {}
+
+	public double getRandom() {
+		return random;
+	}
+
+	public void setRandom(double random) {
+		this.random = random;
+	}
 	
 }
