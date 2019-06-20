@@ -57,16 +57,7 @@ public class CartaController {
 		model.addAttribute("carta", new Carta());
 		return "addCarta";
 	}
-	@RequestMapping(value = "/collezionePersonale/{id}", method = RequestMethod.GET)
-	public String getCartaPersonale(@PathVariable ("id") Long id, Model model) {
-		if(id!=null) {
-			model.addAttribute("carta", this.cartaService.cartaPerId(id));
-			return "cartaPersonale";
-		}else {
-			model.addAttribute("carte", this.cartaService.tutti());
-			return "collezionePersonale";
-		}
-	}
+
 	@RequestMapping(value="/addCarta", method = RequestMethod.POST)
 	public String addCarta(@Valid @ModelAttribute("carta") Carta carta, Model model, BindingResult bindingResult) {
 		this.cartaValidator.validate(carta, bindingResult);
