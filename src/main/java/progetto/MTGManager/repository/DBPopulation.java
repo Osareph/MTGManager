@@ -87,6 +87,14 @@ public class DBPopulation implements ApplicationRunner{
 		cartaRepository.save(c2);
 		cartaRepository.save(c3);
 		cartaRepository.save(c4);
+		c1= new Carta("Isola","blu",1,u4);
+		c2= new Carta("Isola","blu",1,u4);
+		c3= new Carta("Pianura","bianca",1,u4);
+		c4= new Carta("Ponte di Mosswort","verde",1,u4);
+		cartaRepository.save(c1);
+		cartaRepository.save(c2);
+		cartaRepository.save(c3);
+		cartaRepository.save(c4);
 
 	}
 
