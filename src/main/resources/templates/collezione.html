@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div class="top-box2">
+		<a th:href="@{'/home'}"><input class="buttonHome" type="button" value="TORNA ALLA HOME"></a>
 		<div class="logo-box2">
 			<a th:href="@{'/home'}"><img th:src="@{'/assets/logo.png'}"
 				class="logo" /></a>
@@ -15,9 +16,7 @@
 		<h1 class="title">COLLEZIONE</h1>
 	</div>
 	<div class="background-box3">
-		<div>
-		<a th:href="@{'/home'}"><input class="button" type="button" value="TORNA ALLA HOME"/></a>
-	</div>
+	
 		<div th:each="carta : ${carte}" class="carta-box">
 			<div class="cartaimg-box">
 				<img class="cardimg" th:src="@{'/assets' + '/' + ${carta.nome} + '.png'}"/>

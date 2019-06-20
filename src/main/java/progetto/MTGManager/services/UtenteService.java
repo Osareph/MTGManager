@@ -1,10 +1,13 @@
 package progetto.MTGManager.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import progetto.MTGManager.model.Carta;
 import progetto.MTGManager.model.Utente;
 import progetto.MTGManager.repository.UtenteRepository;
 
@@ -36,5 +39,10 @@ public class UtenteService {
 		Utente tmp = utenteRepository.findByUsername(utente.getUsername());
 		tmp.setRole("GUEST");
 		return utenteRepository.save(tmp);
+	}
+	
+	@Transactional
+	public List<Utente> tutti(){
+		return (List<Utente>) this.utenteRepository.findAll();
 	}
 }

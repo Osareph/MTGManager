@@ -38,7 +38,7 @@ public class DBPopulation implements ApplicationRunner{
 		Carta c3 = new Carta("Isola","blu",2);
 		Carta c4 = new Carta("Montagna","rossa",1);
 		Carta c5 = new Carta("Pianura","bianca",0);
-		Carta c6 = new Carta("Blasphemous_Act", "rossa",1);
+		Carta c6 = new Carta("Atto Blasfemo", "rossa",1);
 		cartaRepository.save(c1);
 		cartaRepository.save(c2);
 		cartaRepository.save(c3);

@@ -39,9 +39,10 @@ public class CartaController {
 		return "collezione";
 	}
 	
-	@RequestMapping(value = "/collezionePersonale")
-	public String collezionePersonale() {
-		return "collezionePersonale";
+	@RequestMapping(value = "/collezioniUtenti")
+	public String collezionePersonale(Model model) {
+		model.addAttribute("utenti", this.utenteService.tutti());
+		return "collezioniUtenti";
 	}
 	
 	@RequestMapping(value= "aggiungiCarta")

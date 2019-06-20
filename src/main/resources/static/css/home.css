@@ -106,6 +106,28 @@ h1{
 	opacity: 0.9;
 }
 
+.buttonHome {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	left: 2%;
+	top:25%;
+	height:35%;
+	position: absolute;
+	border:none; 
+	width: 20%;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-radius: 4px;
+	background:none
+}
+.buttonHome:hover{
+	text-decoration:underline;
+	background: #fe3c00;
+	color: white;
+}
 .button:hover{
 	text-decoration:underline;
 	background: #fe3c00;
@@ -602,7 +624,7 @@ input.error2{
 	position: absolute;
 	border:none; 
 	top:100%;
-	left:36%;
+	left:35%;
 	width: 30%;
 	cursor: pointer;
 	color: white;
@@ -630,7 +652,7 @@ input.error2{
 	z-index:4;
 	position:absolute;
 	height:3%;
-	left:70%;
+	left:69%;
 	top: 64%;
 }
 .i-box:hover{
@@ -644,6 +666,7 @@ input.error2{
 	-webkit-box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.72);
 	-moz-box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.72);
 	box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.72);
+	border:1px solid black;
 }
 .i-img:hover{
 	height:110%;
@@ -651,4 +674,19 @@ input.error2{
 	-webkit-box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.72);
 	-moz-box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.72);
 	box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.72);
+	border:2px solid black;
+}
+.i-Hide{
+	display:none
+}
+.evolution{
+	z-index:4;
+	position:absolute;
+	left:69%;
+	top: 61%;
+	width:14%;
+	height:10%;
+	background: grey;
+	opacity:0.9;
+	border:1px solid black;
 }

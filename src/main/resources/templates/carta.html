@@ -27,6 +27,7 @@
 		<h4 class="subtitle">Nome carta: </h4><h1 class="title2" th:text="${carta.nome}"></h1>
 		</div>
 		<form class="form-carta" th:action="@{'/moveCarta' + '/' + ${carta.id}}" th:object="${utente}" method="post">
+			<h4 class="subtitle">Username Destinatario:</h4>
 			<input class="error2" th:if="${error == 1}" type="text" th:field="*{username}"  placeholder="UTENTE NON TROVATO!" oninput="this.className='normal2'">
 			<input class="type2" th:if="${error == 0}" type="text"  th:field="*{username}"  placeholder="Username"/><br>
 			<button class="button4" type="submit"><h4>Aggiungi alla collezione</h4></button>
@@ -34,8 +35,9 @@
 	<div class="quantita-box">
 		<h4 class="subtitle">Disponibile in: </h4><h1 class="title2" th:text="'#' + ${carta.quantita} + ' unit&agrave;'"></h1>
 	</div>
-	<div class="i-box">
-		<img class="i-img" th:src="@{/assets/i.png}"/>
-	</div>
+	<!--
+	<div class="i-box" onclick="this.className='evolution'">
+		<img class="i-img" th:src="@{/assets/i.png}" onclick="this.className='i-Hide'"/>
+	</div> -->
 </body>
 </html>
