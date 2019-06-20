@@ -77,13 +77,15 @@ public class CartaController {
 		if(id!=null) {
 			model.addAttribute("utente", new Utente());
 			model.addAttribute("carta", this.cartaService.cartaPerId(id));
-			model.addAttribute("error", 0);
+			model.addAttribute("error", 0);  //questo attributo permette alla vista di decidere se mostrare la form con avviso di errore o meno
 			return "carta";
 		}else {
 			model.addAttribute("carte", this.cartaService.tutti());
 			return "collezione";
 		}
 	}
+	
+	//ho usato 2 path variable per tenere traccia sia dell'utente che della carta, conoscere l'utete di riferimento sarà essenziale per la riuscita dello step successivo: removeCarta
 	@RequestMapping(value = "/cartaP/{id}/{id_u}", method = RequestMethod.GET)
 	public String getCartaP(@PathVariable ("id") Long id,@PathVariable("id_u") Long id_u, Utente utente,  Model model) {
 		if(id!=null) {
@@ -99,6 +101,8 @@ public class CartaController {
 		}
 	}
 	
+	//questo metodo confronta la password inserita nella form della vista con quella dell'utente du cui si è tenuto traccia
+	//se l'esito è positivo procede ad eliminare l'istanza della carta collegata all'utente nel DB e ad aumentare la quantità disponibile della stessa nella collezione condivisa
 	@RequestMapping(value = "/removeCarta/{id}/{id_u}", method = RequestMethod.POST)
 	public String removeCarta(@PathVariable ("id") Long id, @PathVariable ("id_u") Long id_u, @Valid @ModelAttribute("utente") Utente utente, Model model, BindingResult bindingResult) {
 		Utente trueUtente= new Utente();
@@ -124,7 +128,8 @@ public class CartaController {
 			}
 			
 	}
-	
+	//questo metodo si serve dell'username inserito nella form della vista per rintracciare l'utente a cui assegnare la carta
+	//l'assegnazione consiste nel generare una  nuova istanza della carta collegandola all'utente in questione, mentre alla versione "originale" della carta viene diminuita la quantità disponibile
 	@RequestMapping(value = "/moveCarta/{id}", method = RequestMethod.POST)
 	public String moveCarta(@PathVariable ("id") Long id,@Valid @ModelAttribute("utente") Utente utente, Model model, BindingResult bindingResult) {
 		this.usernameValidator.validate(utente, bindingResult);
